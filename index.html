@@ -1,1 +1,103 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gen AI in Research Institute Work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+    header {
+      background: #224488;
+      color: #fff;
+      padding: 24px 32px 20px 32px;
+      font-size: 2em;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+    }
+    main {
+      display: flex;
+      min-height: calc(100vh - 70px);
+    }
+    .content {
+      flex: 1;
+      padding: 32px;
+      background: #fff;
+      margin-right: 240px; /* To keep menu from overlapping */
+    }
+    nav.menu {
+      width: 220px;
+      background: #eef1f8;
+      border-left: 1px solid #ccc;
+      position: fixed;
+      right: 0;
+      top: 70px; /* Height of header */
+      bottom: 0;
+      padding: 32px 20px;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.04);
+    }
+    nav.menu ul {
+      padding: 0;
+      list-style: none;
+    }
+    nav.menu li {
+      margin-bottom: 18px;
+    }
+    nav.menu a {
+      text-decoration: none;
+      color: #224488;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.2s;
+    }
+    nav.menu a:hover {
+      color: #17a589;
+    }
+    @media (max-width: 900px) {
+      nav.menu {
+        position: static;
+        width: 100%;
+        top: 0;
+        box-shadow: none;
+        border-left: none;
+        border-top: 1px solid #ccc;
+        padding: 18px 12px;
+      }
+      .content {
+        margin-right: 0;
+        padding: 22px;
+      }
+      main {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Practical Implementation of Gen AI Tools in Research
+  </header>
+  <main>
+    <div class="content">
+      <h2>Welcome</h2>
+      <p>
+        This page introduces practical ways you can use Generative AI tools in your work at our research institute.
+      </p>
+      <!-- Add introductory content here -->
+    </div>
+    <nav class="menu">
+      <h3>Topics</h3>
+      <ul>
+        <li><a href="#text-generation">Text Generation</a></li>
+        <li><a href="#data-analysis">Data Analysis</a></li>
+        <li><a href="#presentation-assist">Presentations & Visuals</a></li>
+        <li><a href="#coding">Coding Assistance</a></li>
+        <li><a href="#ethical-considerations">Ethical Considerations</a></li>
+      </ul>
+    </nav>
+  </main>
+</body>
+</html>
