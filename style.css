@@ -8,6 +8,60 @@ body {
   background: #f7f7f7;
 }
 
+.collapsible {
+  border: 1px solid black;
+  border-radius: 6px;
+  background: white;
+  max-width: 600px;
+}
+
+.collapsible__toggle {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.collapsible__toggle:focus-visible {
+  outline: 2px solid yellow;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.collapsible__toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.collapsible__toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.collapsible__panel {
+  overflow: hidden;
+  padding: 0 1rem;
+  border-top: 1px solid black;
+}
+
+/* Optional: smoother content appearance */
+.collapsible__panel > * {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.collapsible__panel[data-open="true"] > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 header {
   position: sticky;
   top: 0;
@@ -186,6 +240,9 @@ nav.menu a:focus-visible {
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   border-radius: 10px;
 }
+
+
+
 
 @media (max-width: 900px) {
   main {
