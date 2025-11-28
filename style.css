@@ -1,120 +1,52 @@
 :root {
+  --small-border: 10px;
+  --large-border: 16px;
   --header-height: 50px; /* tweak to your actual header height */
+  --tooltip-bg: #24292f;
+  --tooltip-fg: #ffffff;
+  --tooltip-border: rgba(0, 0, 0, 0.2);
+  --tooltip-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  --trigger-bg: #ffffff;
+  --trigger-fg: #000000;
+  --trigger-border: #000000;
+  --trigger-size: 1.15em; /* scales with surrounding text */
+  --brand-dark: #030815;
+  --brand-blue: #185aa5;
+  --brand-light: #e0e0e0;
+  --brand-white: #f7f7f7;
+  --brand-yellow: #ffd60a; /* warm, readable yellow */
 }
 
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
-  background: #f7f7f7;
+  font-family: "Funnel Display", sans-serif;
+  background: var(--brand-white);
 }
 
-.collapsible {
-  border: 1px solid black;
-  border-radius: 6px;
-  background: white;
-  max-width: 600px;
-}
-
-.collapsible__toggle {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: transparent;
-  border: 0;
-  text-align: left;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.collapsible__toggle:focus-visible {
-  outline: 2px solid yellow;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-.collapsible__toggle::before {
-  content: "▸";
-  display: inline-block;
-  transition: transform 200ms ease;
-}
-
-.collapsible__toggle[aria-expanded="true"]::before {
-  transform: rotate(90deg);
-}
-
-.collapsible__panel {
-  overflow: hidden;
-  padding: 0 1rem;
-  border-top: 1px solid black;
-}
-
-/* Optional: smoother content appearance */
-.collapsible__panel > * {
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.collapsible__panel[data-open="true"] > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-.read-more {
-  max-width: 60ch;
-  margin: 1rem 0 2rem;
-}
-
-.read-more__text {
-  line-height: 1.6;
-  margin: 0 0 0.5rem;
-}
-
-.read-more__toggle {
-  appearance: none;
-  border: 1px solid black;
-  border-radius: 6px;
-  background: #fff;
-  color: black;
-  padding: 0.4rem 0.7rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-.read-more__toggle:hover {
-  background: #fff;
-}
-
-.read-more__toggle:focus-visible {
-  outline: 2px solid black;
-  outline-offset: 2px;
-}
-
-
+/* Sticky header */
 header {
   position: sticky;
   top: 0;
   z-index: 1000; /* sit above content */
   height: var(--header-height);
-  background: #030815;
-  color: #fff;
+  background: var(--brand-dark);
+  color: var(--brand-white);
   padding: 24px 32px 20px 32px;
   font-size: 2em;
-  letter-spacing: 1px;
+  
   box-shadow: 0 2px 4px rgba(0,0,0,0.07);
 }
 
 /* Layout the header content: title on the left, search on the right */
 .header-content {
+  font-family: "Funnel Display", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
 
+/* Find bar styles */
 /* Smaller font for the search area so the input isn't huge due to header font-size */
 .find {
   display: flex;
@@ -131,16 +63,20 @@ header {
   border-radius: 9999px;
   border: 1px solid rgba(255,255,255,0.25);
   background: rgba(255,255,255,0.12);
-  color: #fff;
+  color: var(--brand-white);
   outline: none;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.find input[type="search"]::placeholder { color: rgba(255,255,255,0.8); }
+.find input[type="search"]::placeholder { 
+  color: rgba(255,255,255,0.8);
+  font-family: "Funnel Display", sans-serif;
+ }
 
 .find input[type="search"]:focus {
   background: rgba(255,255,255,0.18);
   border-color: rgba(255,255,255,0.45);
+  font-family: "Funnel Display", sans-serif;
 }
 
 /* Controls: counter + buttons */
@@ -173,14 +109,14 @@ header {
 
 /* Highlight styles inside .content */
 mark.find-highlight {
-  background: #ffeb3b; /* yellow highlight */
+  background: var(--brand-yellow); /* yellow highlight */
   color: inherit;
   padding: 0 2px;
   border-radius: 3px;
 }
 mark.find-highlight.current {
-  outline: 1px solid #050f25; /* emphasize current match */
-  background: #ffeb3b;
+  outline: 1px solid var(--brand-dark); /* emphasize current match */
+  background: var(--brand-yellow);
 }
 
 /* Visually hidden label for accessibility */
@@ -191,6 +127,7 @@ mark.find-highlight.current {
   height: 1px; width: 1px; overflow: hidden; white-space: nowrap;
 }
 
+/* Main layout: sidebar + content */
 main {
   display: flex;
   min-height: calc(100vh - 70px);
@@ -198,25 +135,27 @@ main {
 nav.menu {
   position: sticky;
   top: calc(var(--header-height) + 80px); /* gap below header */
-  background: #030815;
-  border: 1px solid #ccc;
+  background: var(--brand-dark);
+  border: 1px solid var(--brand-white);
   box-shadow: 0 2px 8px rgba(47, 45, 45, 0.04);
   padding: 18px 16px;
   margin: 24px 0 0 32px;
   height: auto;
   align-self: flex-start;
-  border-radius: 10px;
+  border-radius: var(--large-border);
   min-width: 210px;
-  max-width: 320px;
+  max-width: 400px;
   box-sizing: border-box;
 }
 
+/*
 nav.menu h3 {
   margin-top: 0;
   margin-bottom: 18px;
   font-size: 1.2em;
   color: #224488;
 }
+*/
 
 nav.menu ul {
   padding: 0;
@@ -236,33 +175,127 @@ nav.menu a {
   display: block;               /* let the anchor fill the line */
   text-decoration: none;
   padding: 12px 12px;            /* consistent padding */
-  color: #e0e0e0;
+  color: var(--brand-white);
   font-weight: bold;
   font-size: 1.05em;
   line-height: 1.25;
   border: 1px solid transparent; /* reserve space for hover border */
-  border-radius: 6px;
+  border-radius: var(--small-border);
   box-sizing: border-box;
   transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
 
 nav.menu a:hover,
 nav.menu a:focus {
-  background-color: #e5e5e5;
-  color: #050f25;
-  border-color: #ccc;
+  background-color: var(--brand-light);
+  color: var(--brand-dark);
+  /*border-color: var(--brand-white);*/
   outline: none;
 }
 
 nav.menu a:active {
-  background-color: #b5b5b5;
-  color: #050f25;
+  background-color: var(--brand-light);
+  color: var(--brand-dark);
 }
 
 nav.menu a:focus-visible {
   box-shadow: 0 0 0 3px rgba(180, 200, 235, 0.55);
 }
 
+/* CONTENT COMPONENTS */
+
+/* Collapsible component */
+.collapsible {
+  border: 1px solid var(--brand-dark);
+  border-radius: var(--small-border);
+  background: white;
+  max-width: 800px;
+  font-family: "Funnel Display", sans-serif;
+}
+
+.collapsible__toggle {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 0;
+  font-family: "Funnel Display", sans-serif;
+  text-align: left;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.collapsible__toggle:focus-visible {
+  outline: 2px solid yellow;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.collapsible__toggle::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.collapsible__toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.collapsible__panel {
+  overflow: hidden;
+  padding: 0 1rem;
+  border-top: 1px solid var(--brand-dark);
+}
+
+/* Optional: smoother content appearance */
+
+.collapsible__panel > * {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.collapsible__panel[data-open="true"] > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Read More component */
+.read-more {
+  max-width: 100%;
+  margin: 1rem 0 2rem;
+}
+
+.read-more__text {
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.read-more__toggle {
+  font-family: "Funnel Display", sans-serif;
+  appearance: none;
+  border: 1px solid black;
+  border-radius: 6px;
+  background: #fff;
+  color: black;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.read-more__toggle:hover {
+  background: #fff;
+}
+
+.read-more__toggle:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
+/* Main content area */
+/*
 .content {
   font-family: "Source Serif 4", serif;
   flex: 1;
@@ -272,9 +305,282 @@ nav.menu a:focus-visible {
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   border-radius: 10px;
 }
+*/
+.content {
+  font-family: "Source Serif 4", serif;
+  flex: 1;
+  padding: 32px;
+  margin: 0px 32px 24px 32px;
+}
+/* Base content section ("sub-space") */
+.section {
+  /* Layout */
+  display: block;
+  padding: 1rem;
+  margin: 12px 0;
+  border-radius: 12px;
+
+  /* Visuals */
+  background: #ffffff;                /* default white to match .content */
+  border: 1px solid rgba(3, 8, 21, 0.08);
+  box-shadow: 0 1px 4px rgba(3, 8, 21, 0.05);
+
+  /* Typography harmony */
+  font-family: inherit;
+  color: #030815;
+}
+
+/* A subtle header inside a section */
+.section__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2;
+  color: var(--brand-blue);
+}
 
 
+/* Body content */
+.section__body {
+  margin-top: 8px;
+}
 
+/* Variants: adjust background/border subtly for separation */
+
+/* Muted grey card – slight contrast from white */
+.section--muted {
+  background: #f9f9f9;
+  border-color: rgba(3, 8, 21, 0.1);
+}
+
+/* Light grey card (using your #e0e0e0, softened) */
+.section--light {
+  background: #ededed;               /* close to #e0e0e0 but with better text contrast */
+  border-color: rgba(3, 8, 21, 0.15);
+}
+
+/* White variant – white card with */
+.section--white {
+  position: relative;
+  background: #ffffff;
+  border-color: rgba(3, 8, 21, 0.12);
+}
+
+
+/* Dark-tinted card – very subtle dark tint (keep text readable) */
+.section--tint {
+  background: #f3f4f7;               /* tint inspired by #030815 */
+  border-color: rgba(3, 8, 21, 0.15);
+}
+
+/* Optional small label chip in the corner */
+.section__label {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1;
+  border: 1px solid rgba(3, 8, 21, 0.12);
+  background: #ffffff;
+  color: #030815;
+}
+
+/* Label placement helpers */
+.section__label--top-right {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+/* Small note card variant */
+.section--note {
+  /* Size */
+  max-width: 36rem;           /* ~576px; adjust as needed */
+  width: 100%;
+  margin-inline: auto;        /* center within container */
+
+  /* Visuals (yellow note) */
+  background: #fff9d6;        /* very light yellow */
+  border-color: rgba(255, 214, 10, 0.45);
+}
+
+/* Optional: slightly tighter spacing for a compact note card */
+.section--note.section--compact {
+  padding: 0.75rem 1rem;
+}
+
+/* Optional: inline note card if you want it to sit within text flow */
+.section--note-inline {
+  display: inline-block;
+  max-width: 24rem;
+  margin: 0.25rem 0.5rem;
+  vertical-align: middle;
+}
+
+.section__title--note {
+  font-size: 1.2rem;
+  color: var(--brand-dark);
+}
+
+/* Inline wrapper so it fits naturally within text flow */
+.info {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  line-height: 1;
+}
+
+/* The small round icon button */
+.info__trigger {
+  appearance: none;
+  border: 1px solid var(--trigger-border);
+  background: var(--trigger-bg);
+  color: var(--trigger-fg);
+  border-radius: 999px;
+  width: var(--trigger-size);
+  height: var(--trigger-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.8em; /* keeps the symbol subtle */
+  cursor: help;
+  padding: 0;
+  margin-left: 0.25em;
+  vertical-align: text-bottom;
+}
+
+/* Icon choice via data-icon */
+.info__trigger::before {
+  content: "?";
+  line-height: 1;
+}
+.info__trigger[data-icon="bulb"]::before {
+  content: "💡";
+  font-size: 0.95em;
+}
+
+/* Focus ring for accessibility */
+.info__trigger:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+/* Tooltip panel */
+.info__tooltip {
+  position: absolute;
+  z-index: 1000;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-fg);
+  box-shadow: var(--tooltip-shadow);
+  border: 1px solid var(--tooltip-border);
+  font-size: 0.9em;
+  line-height: 1.35;
+  pointer-events: none; /* avoid trapping mouse */
+  opacity: 0;
+  transform: translate(-50%, -6px) scale(0.98);
+  transition: opacity 120ms ease, transform 120ms ease;
+  /* default placement: top, centered */
+  left: 50%;
+  bottom: calc(100% + 8px);
+}
+
+/* Tooltip arrow */
+.info__tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+
+/* Placement: bottom */
+.info[data-placement="bottom"] .info__tooltip {
+  top: calc(100% + 8px);
+  bottom: auto;
+  transform: translate(-50%, 6px) scale(0.98);
+}
+.info[data-placement="bottom"] .info__tooltip::after {
+  top: -6px;
+  bottom: auto;
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent var(--tooltip-bg) transparent;
+}
+
+/* Visible state toggled by JS with [data-open="true"] */
+.info[data-open="true"] .info__tooltip {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+/* Ensure hidden attribute actually hides if present */
+.info__tooltip[hidden] {
+  display: none !important;
+}
+
+/* Image card */
+
+
+/* OPTION B: Fixed frame with letterboxing — no crop, may show bars */
+/* Keep a fixed aspect-ratio but show the whole image inside. */
+.image-card__media {
+  background: #e0e0e0;
+}
+
+.image-card__media > img {
+  display: block;
+  max-width: 100%;
+  height: auto;                 /* keep natural ratio */
+  margin-left: auto;            /* center horizontally if narrower */
+  margin-right: auto;
+}
+
+
+/* Example card chrome (unchanged) */
+.image-card {
+  display: block;
+  max-width: 720px;
+  margin: 24px auto;
+  background: #ffffff;
+  border: 1px solid rgba(3, 8, 21, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(3, 8, 21, 0.06);
+  overflow: hidden;          /* keeps rounded corners on the image */
+  color: #030815;
+  font-family: inherit;
+}
+.image-card__caption {
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid rgba(3, 8, 21, 0.06);
+}
+.image-card__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: #030815;
+}
+.image-card__meta {
+  margin: 6px 0 0 0;
+  font-size: 0.95rem;
+  color: rgba(3, 8, 21, 0.75);
+}
+
+/* Optional: edge-to-edge, smaller cards */
+.image-card--small { max-width: 480px; }
+.image-card--wide  { max-width: 960px; }
 
 @media (max-width: 900px) {
   main {
@@ -289,4 +595,10 @@ nav.menu a:focus-visible {
     margin: 20px 16px 0 16px;
     padding: 22px;
   }
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .section__title { transition: none; }
 }

@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Praktické rady pro práci s genAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Import fonts via Google API -->
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin-ext" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
 
+  <!-- Import JavaScript files -->
   <script src="search.js" defer></script>
   <script src="collapsible.js" defer></script>
   <script src="read-more.js" defer></script>
+  <script src="info-bubble.js" defer></script>
 </head>
+
 <body>
+
 <header>
   <div class="header-content">
-    <div class="brand">Praktické rady pro práci s genAI</div>
-
+    <div class="brand">trAIning: praktické rady pro práci s genAI</div>
+    <!-- In-page search form -->
     <form id="find-form" role="search" class="find" onsubmit="return false;">
       <label for="site-search" class="visually-hidden">Vyhledat na této stránce</label>
       <input id="site-search" type="search" placeholder="Vyhledat na této stránce…" autocomplete="off" />
@@ -31,7 +38,9 @@
     </form>
   </div>
 </header>
+
   <main>
+    <!-- Side menu -->
     <nav class="menu">
       
       <ul>
@@ -41,23 +50,94 @@
         <li><a href="#coding">Coding Assistance</a></li>
         <li><a href="#ethical-considerations">Ethical Considerations</a></li>
       </ul>
+
     </nav>
+
     <div class="content">
-      <h2>Welcome</h2>
-      <p>
-        Příliš žluťoučký kůň úpěl ďábelské ódy.
-      </p>
-      
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <div class="section section--white">
+          <!-- Bubble with details in top right corner -->
+          <span class="section__label section__label--top-right">Details window here</span>
+          <h1 class="section__title">Specifications</h1>
+          <div class="section__body">
+            První popis.
+           <ul>
+            <li>Item A</li>
+            <li>Item B</li>
+           </ul>
 
-Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar, pretium mi vitae, dictum eros. Aenean imperdiet hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
+           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, 
+            sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. 
+            Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, 
+            ut mollis lacus aliquam sed. Curabitur fringilla, 
+            nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          </p> 
 
-Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
+          <div class="section section--note section--compact">
+            <h3 class="section__title section__title--note">Note</h3>
 
-In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
+            <p>This is a small, attention-grabbing note with a limited width.</p>
+            
+          </div>
 
-Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
+
+          </div>
+         </div>
+
+
+       <div class="section section--muted">
+        <h2 class="section__title">Overview</h2>
+        <div class="section__body">
+              <h1>Read more / Read less</h1>
+
+              <!-- Example 1: defaults ("Read more" / "Read less") -->
+              <div class="read-more" data-read-more>
+                <p class="read-more__text">
+                  <span data-read-more-teaser>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, 
+                      sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. 
+                      Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, 
+                      ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. 
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </span>
+                  <span data-read-more-more hidden>
+                    <p>
+                    Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar,
+                    pretium mi vitae, dictum eros. Aenean imperdiet 
+                    hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, 
+                    auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, 
+                    sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
+                    </p>
+                    <p>
+                    Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. In sollicitudin tincidunt mauris ut aliquet. 
+                    Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, 
+                    urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, 
+                    commodo pulvinar purus.
+                    </p>
+                    <p>
+                    In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. 
+                    Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. 
+                    Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. 
+                    Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
+                    </p>
+                    <p>
+                    Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. 
+                    Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, 
+                    tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, 
+                    et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
+                    </p>
+                  </span>
+                </p>
+                <button class="read-more__toggle" type="button" aria-expanded="false">
+                  Více...
+                </button>
+              </div>
+
+
+        </div>
+      </div>
       
 
  <div class="collapsible" data-collapsible>
@@ -99,30 +179,42 @@ In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae sce
 
 Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
 
-    <h1>Read more / Read less</h1>
 
-    <!-- Example 1: defaults ("Read more" / "Read less") -->
-    <div class="read-more" data-read-more>
-      <p class="read-more__text">
-        <span data-read-more-teaser>
-          A short teaser is visible by default. This component hides the rest
-          from both sighted users and screen readers until expanded.
-        </span>
-        <span data-read-more-more hidden>
-          When expanded, this additional content appears. You can place any inline
-          HTML here, including <strong>bold</strong>, <em>emphasis</em>, and links.
-        </span>
-      </p>
-      <button class="read-more__toggle" type="button" aria-expanded="false">
-        Read more
-      </button>
-    </div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar, pretium mi vitae, dictum eros. Aenean imperdiet hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
 
-Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
+Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex.
+
+<figure class="image-card">
+  <div class="image-card__media">
+    <img
+      src="img/cat.jpg"
+      alt="Short descriptive alt text of the image"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption class="image-card__caption">
+    <h3 class="image-card__title">Your image title</h3>
+    <!-- Optional extra line -->
+    <p class="image-card__meta">An optional short description or credit.</p>
+  </figcaption>
+</figure>
+
+<!-- Size variants -->
+<figure class="image-card image-card--small">
+  <div class="image-card__media">
+    <img src="img/cat.jpg" alt="Description" loading="lazy" decoding="async" />
+  </div>
+  <figcaption class="image-card__caption">
+    <h3 class="image-card__title">Smaller card</h3>
+  </figcaption>
+</figure>
+
+
+In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
 
 In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
 
@@ -153,13 +245,67 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum 
 
 Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar, pretium mi vitae, dictum eros. Aenean imperdiet hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
 
-Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
+Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. 
+
+ <p>
+      Your order will ship within 2–3 business days
+      <span class="info" data-info>
+        <button
+          class="info__trigger"
+          type="button"
+          aria-label="More information about shipping time"
+          aria-expanded="false"
+          data-icon="?"
+        ></button>
+        <span class="info__tooltip" role="tooltip">
+          Shipping time excludes weekends and holidays. Actual delivery depends on the selected carrier.
+        </span>
+      </span>.
+    </p>
+
+    <p>
+      Pro tip: use keyboard shortcuts
+      <span class="info" data-info data-placement="bottom">
+        <button
+          class="info__trigger"
+          type="button"
+          aria-label="More information about keyboard shortcuts"
+          aria-expanded="false"
+          data-icon="bulb"
+        ></button>
+        <span class="info__tooltip" role="tooltip">
+          Press “/” to focus search. Use “?” to see all shortcuts.
+        </span>
+      </span>
+      to work faster.
+    </p>
+
+In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
 
 In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
 
 Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
 <!-- Add introductory content here -->
+
+
+
+
+  <div class="section section--light">
+    <h2 class="section__title">Related Resources</h2>
+    <div class="section__body">
+      <p>Links or references relevant to the current selection.</p>
+        <div class="section section--emphasis">
+    <h2 class="section__title">Notes</h2>
+    <div class="section__body">
+      <p>Important caveats or warnings highlighted with a soft yellow wash.</p>
     </div>
+  </div>
+    </div>
+  </div>
+
+    </div>
+
+
   </main>
 </body>
 </html>
