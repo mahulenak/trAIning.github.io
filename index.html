@@ -12,6 +12,7 @@
 
   <script src="search.js" defer></script>
   <script src="collapsible.js" defer></script>
+  <script src="read-more.js" defer></script>
 </head>
 <body>
 <header>
@@ -98,7 +99,24 @@ In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae sce
 
 Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
 
+    <h1>Read more / Read less</h1>
 
+    <!-- Example 1: defaults ("Read more" / "Read less") -->
+    <div class="read-more" data-read-more>
+      <p class="read-more__text">
+        <span data-read-more-teaser>
+          A short teaser is visible by default. This component hides the rest
+          from both sighted users and screen readers until expanded.
+        </span>
+        <span data-read-more-more hidden>
+          When expanded, this additional content appears. You can place any inline
+          HTML here, including <strong>bold</strong>, <em>emphasis</em>, and links.
+        </span>
+      </p>
+      <button class="read-more__toggle" type="button" aria-expanded="false">
+        Read more
+      </button>
+    </div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
@@ -110,7 +128,26 @@ In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae sce
 
 Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
 
-
+  <!-- Example 2: custom button labels -->
+    <div
+      class="read-more"
+      data-read-more
+      data-collapsed-text="Show more details"
+      data-expanded-text="Show fewer details"
+    >
+      <p class="read-more__text">
+        <span data-read-more-teaser>
+          You can customize the toggle labels via data attributes on the container.
+        </span>
+        <span data-read-more-more hidden>
+          This is the extra content revealed on expand. It stays completely out of
+          the accessibility tree while collapsed by using the hidden attribute.
+        </span>
+      </p>
+      <button class="read-more__toggle" type="button" aria-expanded="false">
+        Show more details
+      </button>
+    </div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
