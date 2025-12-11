@@ -21,40 +21,258 @@
 </head>
 
 <body>
+  <!-- Page header -->
+  <header>
+    <div class="header-content">
+      <!-- Site title -->
+      <div class="brand">trAIning: praktické rady pro práci s genAI</div>
 
-<header>
-  <div class="header-content">
-    <div class="brand">trAIning: praktické rady pro práci s genAI</div>
-    <!-- In-page search form -->
-    <form id="find-form" role="search" class="find" onsubmit="return false;">
-      <label for="site-search" class="visually-hidden">Vyhledat na této stránce</label>
-      <input id="site-search" type="search" placeholder="Vyhledat na této stránce…" autocomplete="off" />
-      <div class="find-controls">
-        <span id="find-count" aria-live="polite">0/0</span>
-        <button type="button" id="find-prev" title="Předchozí (Shift+Enter)" aria-label="Předchozí výsledek">‹</button>
-        <button type="button" id="find-next" title="Další (Enter)" aria-label="Další výsledek">›</button>
-        <button type="button" id="find-clear" title="Vymazat (Esc)" aria-label="Vymazat vyhledávání">✕</button>
-      </div>
-    </form>
-  </div>
-</header>
+      <!-- In-page search form -->
+      <form id="find-form" role="search" class="find" onsubmit="return false;">
+        <label for="site-search" class="visually-hidden">Vyhledat na této stránce</label>
+        <input id="site-search" type="search" placeholder="Vyhledat na této stránce…" autocomplete="off" />
+        <div class="find-controls">
+          <span id="find-count" aria-live="polite">0/0</span>
+          <button type="button" id="find-prev" title="Předchozí (Shift+Enter)" aria-label="Předchozí výsledek">‹</button>
+          <button type="button" id="find-next" title="Další (Enter)" aria-label="Další výsledek">›</button>
+          <button type="button" id="find-clear" title="Vymazat (Esc)" aria-label="Vymazat vyhledávání">✕</button>
+        </div>
+      </form>
+    </div>
+  </header>
 
   <main>
+
     <!-- Side menu -->
     <nav class="menu">
-      
       <ul>
-        <li><a href="#text-generation">Text Generation</a></li>
-        <li><a href="#data-analysis">Data Analysis</a></li>
-        <li><a href="#presentation-assist">Presentations & Visuals</a></li>
-        <li><a href="#coding">Coding Assistance</a></li>
-        <li><a href="#ethical-considerations">Ethical Considerations</a></li>
+        <li><a href="#introduction">♟ Úvod</a></li>
+        <li><a href="#basics">🧩 Jak LLMs fungují</a></li>
+        <li><a href="#prosandcons">📊 Výhody a omezení</a></li>
+        <li><a href="#usage">💻 Využití LLM</a></li>
+        <li><a href="#safety">🦺 Bezpečnost a etika</a></li>
+        <li><a href="#prompting">✒️ Jak na kvalitní prompt</a></li>
+        <li><a href="#models">📓 Přehled vybraných modelů</a></li>
+        <li><a href="#usecases">📋 Kazuistika</a></li>
+        <li><a href="#resources">🧮 Doporučené zdroje</a
       </ul>
-
     </nav>
 
     <div class="content">
 
+      <!-- INTRODUCTION -->
+
+      <section id="introduction">
+      <div class="section section--white">
+        <h1 class="section__title">Úvod</h1>
+        <div class="section__body">
+            <h1>Proč se zabývat generativním AI</h1>
+            <p>
+              Generativní umělá inteligence představuje rychle se rozvíjející oblast, která zásadně mění způsob, jakým pracujeme s informacemi, 
+              daty i kreativitou. Od tvorby textů, analýz, kódu či obrázků až po pomoc s porozuměním složitým technickým problémům — generativní 
+              modely se stávají nástrojem, který může ušetřit čas, rozšířit možnosti práce a nabídnout nové způsoby myšlení. Přestože nejde o 
+              náhradu lidského úsudku, správně používané nástroje mohou zvýšit efektivitu, podpořit inovace a zjednodušit každodenní agendu ve 
+              výzkumném i administrativním prostředí.
+            </p>
+
+            <h1> Co si z toho odnést</h1>
+            <p>
+              Cílem této stránky není podat vyčerpávající výklad všech technologií ani detailní metodiky práce s AI. Chceme nabídnout první 
+              orientaci: ukázat, co generativní AI dokáže, s čím může pomoci ve výzkumu i praxi, a pojmenovat oblasti, které stojí za hlubší 
+              prozkoumání. Můžete je využít jako inspiraci — jak pro osobní rozvoj, tak pro hledání konkrétních aplikací v projektech.
+            </p>
+
+            <p>
+              Ať už jste začátečník nebo zkušený uživatel, tento trAIning vám pomůže pochopit základy,
+              možnosti a nejlepší postupy pro práci s genAI. Prozkoumáme různé aspekty této technologie,
+              včetně jejího fungování, praktických aplikací, výhod a omezení, bezpečnostních a etických
+              úvah, technik promptování a přehledu vybraných modelů.
+            </p>
+            <p>
+              Budeme rádi, pokud vám tato příručka pomůže při objevování možností, které generativní umělá inteligence
+              nabízí, a těšíme se na vaši zpětnou vazbu a zkušenosti s její aplikací v praxi.
+            </p>
+            
+            <p style="text-align:right;">— Mirek a Mahulena, tým trAIning</p>
+
+        </div>
+      </div>
+      </section>
+
+      <!-- BASICS -->
+      <section id="basics">
+      <div class="section section--muted">
+        <h2 class="section__title">Jak LLMs fungují</h2>
+         <div class="section__body">
+
+            <p>
+              Generativní jazykové modely (LLMs) představují jednu z nejpokročilejších a nejrychleji se vyvíjejících oblastí umělé inteligence. 
+              Abychom porozuměli tomu, co vlastně „umí“ a jak jejich výstupy vznikají, je dobré se podívat na několik základních principů: 
+              jak se tyto modely učí, jak reprezentují text a jakým způsobem generují odpovědi.
+            </p>
+
+            <h1>AI, machine learning a generativní modely</h1>
+            <p>
+              <b>Umělá inteligence (AI)</b> je zastřešující pojem pro systémy, které vykazují schopnosti podobné lidskému uvažování či rozhodování.
+              <br>
+              <b>Machine learning (ML)</b> je jedna z hlavních disciplín AI – soubor metod, kde se model učí z dat místo toho, aby byl explicitně naprogramován.
+              <br>
+              <b>Generativní modely</b>, mezi něž patří i LLMs, jsou speciální třída ML modelů, které se neomezují pouze na predikci nebo klasifikaci, 
+              ale <i>generují nový obsah:</i> text, obrázky, zvuk nebo kód.
+              LLMs jsou tedy konkrétním typem generativní AI, která se specializuje na práci s přirozeným jazykem.
+            </p>
+
+
+            <h1>Co je neuronová síť a proč na ní LLMs stojí</h1>
+            <p>
+              Základem moderních jazykových modelů jsou <b>hluboké neuronové sítě</b> – matematické struktury inspirované fungováním neuronů v mozku, 
+              i když velmi zjednodušené. Sítím se říká „hluboké“ proto, že obsahují mnoho vrstev, z nichž každá provádí jednoduchou transformaci vstupu. 
+              Při průchodu textu sítí se tyto transformace skládají a umožňují modelu zachytit:
+            </p>
+            <ul>
+              <li>statistické vzory v jazyce,</li>
+              <li>gramatiku a syntaxi,</li>
+              <li>semantické vztahy mezi slovy a frázemi,</li>
+              <li>kontextové informace napříč větami a odstavci.</li>
+            </ul>
+            <p>
+              Zásadní průlom přinesla architektura <b>transformer</b>, která umožňuje modelu soustředit pozornost (attention) na různé části textu najednou. 
+              To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
+            </p>
+
+
+            <h1>Jak se LLMs učí</h1>
+             <p>LLMs se učí z obrovských množství textů – knih, webových stránek, článků, technických dokumentací a mnoha dalších zdrojů. Během tréninku model:</p>
+              <ol>
+                <li>Dostane text rozdělený na malé jednotky -
+                  <span class="info" data-info>
+                    <span class="info__trigger info__word"
+                          tabindex="0"
+                          role="button"
+                          aria-label="Více informací o tokenech">
+                      tokeny
+                    </span>
+                    <span class="info__tooltip" role="tooltip" hidden>
+                      Token není vždy celé slovo – může to být i část slova, interpunkční znaménko nebo speciální znak. Například v angličtině je „international“ 
+                          často rozděleno na inter + national, zatímco běžná slova jako „cat“ bývají jeden token.
+                    </span>
+                  </span>.
+                  
+
+                </li>
+                <li>Na základě těchto tokenů se učí předpovídat následující token v sekvenci.</li>
+                <li>Postupnou optimalizací milionů až miliard parametrů si vytváří interní reprezentaci jazykových vzorů.</li>
+              </ol>
+
+            <p>
+            Důležité je, že model se <b>neučí</b> fakta v běžném slova smyslu – neukládá si je jako položky v databázi. Místo toho se učí statistické závislosti: 
+            jaká slova a věty obvykle následují po jiných. Díky tomu dokáže generovat text, který působí informovaně a konzistentně.
+            </p>
+
+            <h1>Jak LLm "chápe" text</h1>
+            <p>Aby mohl model pracovat s textem, potřebuje převést slova do matematické formy. Každý token se proto transformuje do <b>vektorové reprezentace</b> – číselného „otisku“, 
+              který nese informaci o významu a kontextu. Tyto vektory existují v prostoru o vysoké dimenzi (např. 1 024 nebo 4 096 rozměrů). </p>
+            <p>V tomto prostoru platí několik zajímavých vlastností:</p>
+
+            <ul>
+              <li>Blízká slova mají podobný význam.</li>
+              <li>Rozdíly vektoru mohou reprezentovat vztahy:<br>
+                  <i>vektor(král) – vektor(muži) + vektor(žena) ≈ vektor(královna)</i></li>
+              <li>Model „rozumí“ jazyku tím, že operuje v tomto vektorovém prostoru a hledá další pravděpodobné pokračování textu.</li>
+            </ul>
+
+            <p>
+              LLMs negenerují věty podle plánovaného významu. Prostě predikují další token podle pravděpodobností.
+              Přestože to zní mechanicky, kombinace vysoké dimenzionality, velkých dat a sofistikované architektury vede ke zdánlivě „chápavému“ chování.
+            </p>
+
+            <div class="section section--note">
+              <h3 class="section__title section__title--note">Vzdálenosti slov v prostoru</h3>
+
+              <p>U moderních LLMs se dá měřit „podobnost“ slov jako vzdálenost mezi jejich vektory. Například vektorově jsou si blízko páry jako:</p>
+              <ul>
+                <li>král — královna,</li>
+                <li>auto — vozidlo,</li>
+                <li>učitel — škola,</li>
+                <li>lékař — nemocnice.</li>
+              </ul>
+              <p>A naopak velmi vzdálené jsou třeba:</p>
+              <ul>
+                <li>kočka — kvark,</li>
+                <li>matematika — banán.</li>
+              </ul>
+            
+            </div>
+
+        </div>
+
+      </div>
+      </section>
+
+      <section id="prosandcons">
+        <div class="section section--white">
+          <h1 class="section__title">Výhody a omezení</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+      <section id="usage">
+        <div class="section section--muted">
+          <h1 class="section__title">Využití LLM</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+      
+      <section id="safety">
+        <div class="section section--white">
+          <h1 class="section__title">Bezpečnost a etika</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+
+      <section id="prompting">
+        <div class="section section--muted">
+          <h1 class="section__title">Jak na kvalitní prompt</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+      <section id="models">
+        <div class="section section--white">
+          <h1 class="section__title">Přehled vybraných modelů</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+
+      <section id="usecases">
+        <div class="section section--muted">
+          <h1 class="section__title">Kazuistika</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+
+      <section id="resources">
+        <div class="section section--light">
+          <h1 class="section__title section__title--light">Doporučené zdroje</h1>
+          <div class="section__body">
+          </div>
+        </div>
+      </section>
+
+      Element library: 
+      <!--                 -->
+      <!-- Content library -->
+      <!--                 --> 
         <div class="section section--white">
           <!-- Bubble with details in top right corner -->
           <span class="section__label section__label--top-right">Details window here</span>
@@ -71,7 +289,9 @@
             Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, 
             ut mollis lacus aliquam sed. Curabitur fringilla, 
             nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          </p> 
+           </p> 
+
+           
 
           <div class="section section--note section--compact">
             <h3 class="section__title section__title--note">Note</h3>
@@ -82,7 +302,7 @@
 
 
           </div>
-         </div>
+        </div>
 
 
        <div class="section section--muted">
@@ -110,24 +330,6 @@
                     auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, 
                     sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
                     </p>
-                    <p>
-                    Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. In sollicitudin tincidunt mauris ut aliquet. 
-                    Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, 
-                    urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, 
-                    commodo pulvinar purus.
-                    </p>
-                    <p>
-                    In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. 
-                    Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. 
-                    Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. 
-                    Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
-                    </p>
-                    <p>
-                    Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. 
-                    Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, 
-                    tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, 
-                    et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
-                    </p>
                   </span>
                 </p>
                 <button class="read-more__toggle" type="button" aria-expanded="false">
@@ -135,173 +337,146 @@
                 </button>
               </div>
 
-
+            <!-- Example 2: custom button labels -->
+              <div
+                class="read-more"
+                data-read-more
+                data-collapsed-text="Show more details"
+                data-expanded-text="Show fewer details"
+              >
+                <p class="read-more__text">
+                  <span data-read-more-teaser>
+                    You can customize the toggle labels via data attributes on the container.
+                  </span>
+                  <span data-read-more-more hidden>
+                    This is the extra content revealed on expand. It stays completely out of
+                    the accessibility tree while collapsed by using the hidden attribute.
+                  </span>
+                </p>
+                <button class="read-more__toggle" type="button" aria-expanded="false">
+                  Show more details
+                </button>
+              </div>
         </div>
-      </div>
-      
-
- <div class="collapsible" data-collapsible>
-      <button
-        class="collapsible__toggle"
-        aria-expanded="false"
-        aria-controls="collapsible-panel-1"
-        id="collapsible-button-1"
-      >
-        Toggle details
-      </button>
-
-      <div
-        class="collapsible__panel"
-        id="collapsible-panel-1"
-        role="region"
-        aria-labelledby="collapsible-button-1"
-        hidden
-      >
-        <p>
-          This is the content inside the collapsible box. You can put any HTML
-          here: text, images, lists, etc.
-        </p>
-        <ul>
-          <li>Accessible toggle via keyboard</li>
-          <li>Smooth height animation</li>
-          <li>ARIA attributes for screen readers</li>
-        </ul>
-      </div>
-    </div>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar, pretium mi vitae, dictum eros. Aenean imperdiet hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
-
-Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
-
-In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
-
-Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
+       </div>
 
 
+       <div class="section section--emphasis">
+               <h2 class="section__title">Notes</h2>
+                <div class="section__body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. 
+                  Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, 
+                  est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. 
+                  Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, 
+                  nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <figure class="image-card">
+                          <div class="image-card__media">
+                            <img
+                              src="img/cat.jpg"
+                              alt="Short descriptive alt text of the image"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                          <figcaption class="image-card__caption">
+                            <h3 class="image-card__title">Your image title</h3>
+                            <!-- Optional extra line -->
+                            <p class="image-card__meta">An optional short description or credit.</p>
+                          </figcaption>
+                        </figure>
 
-Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar, pretium mi vitae, dictum eros. Aenean imperdiet hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
+                  <div class="collapsible" data-collapsible>
+                    <button
+                      class="collapsible__toggle"
+                      aria-expanded="false"
+                      aria-controls="collapsible-panel-1"
+                      id="collapsible-button-1"
+                    > Toggle details
+                    </button>
 
-Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex.
+                    <div
+                      class="collapsible__panel"
+                      id="collapsible-panel-1"
+                      role="region"
+                      aria-labelledby="collapsible-button-1"
+                      hidden>
+                      <p>
+                        This is the content inside the collapsible box. You can put any HTML
+                        here: text, images, lists, etc.
+                      </p>
+                      <ul>
+                        <li>Accessible toggle via keyboard</li>
+                        <li>Smooth height animation</li>
+                        <li>ARIA attributes for screen readers</li>
+                      </ul>
+                    </div>
+                  </div>
 
-<figure class="image-card">
-  <div class="image-card__media">
-    <img
-      src="img/cat.jpg"
-      alt="Short descriptive alt text of the image"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <figcaption class="image-card__caption">
-    <h3 class="image-card__title">Your image title</h3>
-    <!-- Optional extra line -->
-    <p class="image-card__meta">An optional short description or credit.</p>
-  </figcaption>
-</figure>
-
-<!-- Size variants -->
-<figure class="image-card image-card--small">
-  <div class="image-card__media">
-    <img src="img/cat.jpg" alt="Description" loading="lazy" decoding="async" />
-  </div>
-  <figcaption class="image-card__caption">
-    <h3 class="image-card__title">Smaller card</h3>
-  </figcaption>
-</figure>
+                </div>
+              </div>
 
 
-In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
+              <section id="presentation-assist">
+            <div class="section section--emphasis">
+               <h1 class="section__title">Notes</h1>
+                <div class="section__body">
 
-In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
 
-Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
+                  <p>
+                        Your order will ship within 2–3 business days
+                        <span class="info" data-info>
+                          <button
+                            class="info__trigger"
+                            type="button"
+                            aria-label="More information about shipping time"
+                            aria-expanded="false"
+                            data-icon="?"
+                          ></button>
+                          <span class="info__tooltip" role="tooltip">
+                            Shipping time excludes weekends and holidays. Actual delivery depends on the selected carrier.
+                          </span>
+                        </span>.
+                      </p>
 
-  <!-- Example 2: custom button labels -->
-    <div
-      class="read-more"
-      data-read-more
-      data-collapsed-text="Show more details"
-      data-expanded-text="Show fewer details"
-    >
-      <p class="read-more__text">
-        <span data-read-more-teaser>
-          You can customize the toggle labels via data attributes on the container.
-        </span>
-        <span data-read-more-more hidden>
-          This is the extra content revealed on expand. It stays completely out of
-          the accessibility tree while collapsed by using the hidden attribute.
-        </span>
-      </p>
-      <button class="read-more__toggle" type="button" aria-expanded="false">
-        Show more details
-      </button>
-    </div>
+                      <p>
+                        Pro tip: use keyboard shortcuts
+                        <span class="info" data-info data-placement="bottom">
+                          <button
+                            class="info__trigger"
+                            type="button"
+                            aria-label="More information about keyboard shortcuts"
+                            aria-expanded="false"
+                            data-icon="bulb"
+                          ></button>
+                          <span class="info__tooltip" role="tooltip">
+                            Press “/” to focus search. Use “?” to see all shortcuts.
+                          </span>
+                        </span>
+                        to work faster.
+                      </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <!-- Size variants -->
+                      <figure class="image-card image-card--small">
+                        <div class="image-card__media">
+                          <img src="img/cat.jpg" alt="Description" loading="lazy" decoding="async" />
+                        </div>
+                        <figcaption class="image-card__caption">
+                          <h3 class="image-card__title">Smaller card</h3>
+                        </figcaption>
+                      </figure>
 
-Sed aliquet eros ac lectus interdum, a dapibus odio semper. Fusce ac odio risus. In vel dui justo. Etiam quis nibh pulvinar, pretium mi vitae, dictum eros. Aenean imperdiet hendrerit nisl, dictum sodales orci hendrerit at. Phasellus eros urna, ornare tempus massa non, auctor eleifend lorem. Nulla mattis ipsum euismod, consequat mauris ornare, sollicitudin purus. Nulla aliquet hendrerit consectetur. Nullam at ipsum eget ante porttitor gravida.
 
-Vestibulum id tempus enim. Duis ultricies, urna sed lacinia sagittis, tortor turpis aliquam enim, eget condimentum lectus orci in ex. 
 
- <p>
-      Your order will ship within 2–3 business days
-      <span class="info" data-info>
-        <button
-          class="info__trigger"
-          type="button"
-          aria-label="More information about shipping time"
-          aria-expanded="false"
-          data-icon="?"
-        ></button>
-        <span class="info__tooltip" role="tooltip">
-          Shipping time excludes weekends and holidays. Actual delivery depends on the selected carrier.
-        </span>
-      </span>.
-    </p>
-
-    <p>
-      Pro tip: use keyboard shortcuts
-      <span class="info" data-info data-placement="bottom">
-        <button
-          class="info__trigger"
-          type="button"
-          aria-label="More information about keyboard shortcuts"
-          aria-expanded="false"
-          data-icon="bulb"
-        ></button>
-        <span class="info__tooltip" role="tooltip">
-          Press “/” to focus search. Use “?” to see all shortcuts.
-        </span>
-      </span>
-      to work faster.
-    </p>
-
-In sollicitudin tincidunt mauris ut aliquet. Vestibulum ante sapien, vestibulum vel libero at, feugiat scelerisque nunc. Etiam ut porta augue. Sed quis dapibus purus, quis aliquam dolor. In molestie, tortor a iaculis posuere, urna justo laoreet neque, vitae egestas nisl sapien et nisl. Donec sit amet eros eget mauris iaculis aliquet volutpat vel leo. Etiam massa ligula, imperdiet nec nulla et, commodo pulvinar purus.
-
-In congue, odio quis faucibus facilisis, lacus tellus eleifend ligula, vitae scelerisque velit nunc a arcu. In pellentesque odio ut tellus molestie convallis. Mauris enim orci, pretium ac sapien non, posuere posuere risus. Fusce ornare diam ac volutpat eleifend. Nam in suscipit risus. Morbi at justo mollis, vulputate ipsum id, pharetra magna. Vivamus non quam magna. Donec non lorem in urna pharetra efficitur dignissim a neque. Pellentesque varius at nisi quis viverra. Morbi quis lectus scelerisque nisl lobortis suscipit quis eu risus. Suspendisse eu consectetur nisl, in volutpat lorem.
-
-Mauris felis elit, posuere a dui a, cursus laoreet mi. Quisque fringilla, risus a venenatis varius, quam sem sagittis leo, nec luctus erat turpis ut magna. Donec arcu leo, porta eget lacus vel, fermentum accumsan nulla. Donec in pharetra est. Quisque gravida magna et risus rutrum interdum. Phasellus molestie, tortor pulvinar euismod rhoncus, quam ipsum faucibus risus, id vestibulum lorem erat vel lectus. Vivamus tempor augue enim, et fermentum magna efficitur sit amet. Proin et bibendum quam. Morbi sed bibendum dui. 
-<!-- Add introductory content here -->
+            </div>
+            </div>
+            </section>
 
 
 
 
-  <div class="section section--light">
-    <h2 class="section__title">Related Resources</h2>
-    <div class="section__body">
-      <p>Links or references relevant to the current selection.</p>
-        <div class="section section--emphasis">
-    <h2 class="section__title">Notes</h2>
-    <div class="section__body">
-      <p>Important caveats or warnings highlighted with a soft yellow wash.</p>
-    </div>
-  </div>
-    </div>
-  </div>
+
 
     </div>
 

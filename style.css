@@ -1,15 +1,13 @@
 :root {
-  --small-border: 10px;
-  --large-border: 16px;
+  --small-border: 10px; /* radius */
+  --large-border: 16px; /* radius */
   --header-height: 50px; /* tweak to your actual header height */
   --tooltip-bg: #24292f;
   --tooltip-fg: #ffffff;
   --tooltip-border: rgba(0, 0, 0, 0.2);
   --tooltip-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   --trigger-bg: #ffffff;
-  --trigger-fg: #000000;
   --trigger-border: #000000;
-  --trigger-size: 1.15em; /* scales with surrounding text */
   --brand-dark: #030815;
   --brand-blue: #185aa5;
   --brand-light: #e0e0e0;
@@ -28,12 +26,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000; /* sit above content */
-  height: var(--header-height);
+  min-height: var(--header-height);
   background: var(--brand-dark);
   color: var(--brand-white);
   padding: 24px 32px 20px 32px;
   font-size: 2em;
-  
   box-shadow: 0 2px 4px rgba(0,0,0,0.07);
 }
 
@@ -134,12 +131,11 @@ main {
 }
 nav.menu {
   position: sticky;
-  top: calc(var(--header-height) + 80px); /* gap below header */
+  top: calc(var(--header-height) + 76px); /* gap below header */
   background: var(--brand-dark);
-  border: 1px solid var(--brand-white);
   box-shadow: 0 2px 8px rgba(47, 45, 45, 0.04);
-  padding: 18px 16px;
-  margin: 24px 0 0 32px;
+  padding: 16px 16px;
+  margin: 0px 0 0 4rem;
   height: auto;
   align-self: flex-start;
   border-radius: var(--large-border);
@@ -228,7 +224,7 @@ nav.menu a:focus-visible {
 }
 
 .collapsible__toggle:focus-visible {
-  outline: 2px solid yellow;
+  outline: 2px solid var(--brand-yellow);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -276,21 +272,21 @@ nav.menu a:focus-visible {
 .read-more__toggle {
   font-family: "Funnel Display", sans-serif;
   appearance: none;
-  border: 1px solid black;
+  border: 1px solid var(--brand-dark);
   border-radius: 6px;
   background: #fff;
-  color: black;
+  color: var(--brand-dark);
   padding: 0.4rem 0.7rem;
   font-size: 0.95rem;
   cursor: pointer;
 }
 
 .read-more__toggle:hover {
-  background: #fff;
+  background: var(--brand-white);
 }
 
 .read-more__toggle:focus-visible {
-  outline: 2px solid black;
+  outline: 2px solid var(--brand-dark);
   outline-offset: 2px;
 }
 
@@ -316,9 +312,10 @@ nav.menu a:focus-visible {
 .section {
   /* Layout */
   display: block;
-  padding: 1rem;
-  margin: 12px 0;
+  
+  margin: 0 10rem 1rem 0;
   border-radius: 12px;
+  max-width: 1200px;
 
   /* Visuals */
   background: #ffffff;                /* default white to match .content */
@@ -330,12 +327,18 @@ nav.menu a:focus-visible {
   color: #030815;
 }
 
+.section b{
+  color: var(--brand-blue);
+
+}
+
 /* A subtle header inside a section */
 .section__title {
+  font-family: "Funnel Display", sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin: 0 0 6px 0;
+  margin: 2rem 0px 0 5rem;
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 2;
@@ -346,6 +349,7 @@ nav.menu a:focus-visible {
 /* Body content */
 .section__body {
   margin-top: 8px;
+  padding: 0rem 12rem 2rem 12rem;
 }
 
 /* Variants: adjust background/border subtly for separation */
@@ -398,18 +402,16 @@ nav.menu a:focus-visible {
 /* Small note card variant */
 .section--note {
   /* Size */
-  max-width: 36rem;           /* ~576px; adjust as needed */
+  max-width: 30rem;           /* ~576px; adjust as needed */
   width: 100%;
   margin-inline: auto;        /* center within container */
-
+  padding-left: 3rem;
+  padding-right: 3rem;
   /* Visuals (yellow note) */
-  background: #fff9d6;        /* very light yellow */
-  border-color: rgba(255, 214, 10, 0.45);
-}
-
-/* Optional: slightly tighter spacing for a compact note card */
-.section--note.section--compact {
-  padding: 0.75rem 1rem;
+  background: #FFFCC1;        
+  border-color: var(--brand-dark);
+  border-width: 2px;
+  box-shadow: 0 5px 4px rgba(255, 252, 252, 0.7);
 }
 
 /* Optional: inline note card if you want it to sit within text flow */
@@ -422,6 +424,12 @@ nav.menu a:focus-visible {
 
 .section__title--note {
   font-size: 1.2rem;
+  color: var(--brand-dark);
+  gap: 0rem !important;
+  margin: 1rem 0px 0 0rem !important;
+}
+
+.section__title--light {
   color: var(--brand-dark);
 }
 
@@ -436,31 +444,23 @@ nav.menu a:focus-visible {
 /* The small round icon button */
 .info__trigger {
   appearance: none;
-  border: 1px solid var(--trigger-border);
-  background: var(--trigger-bg);
-  color: var(--trigger-fg);
-  border-radius: 999px;
-  width: var(--trigger-size);
-  height: var(--trigger-size);
-  display: inline-flex;
+  display: inline;
   align-items: center;
   justify-content: center;
   font: inherit;
-  font-size: 0.8em; /* keeps the symbol subtle */
   cursor: help;
-  padding: 0;
-  margin-left: 0.25em;
-  vertical-align: text-bottom;
 }
 
-/* Icon choice via data-icon */
-.info__trigger::before {
-  content: "?";
-  line-height: 1;
-}
-.info__trigger[data-icon="bulb"]::before {
-  content: "💡";
-  font-size: 0.95em;
+.info__word {
+  font-size: inherit;
+  font-weight: bold;
+  padding: 0 2px;
+  background: var(--brand-dark);
+  border-radius: 9999px;
+  color: var(--brand-yellow);
+  cursor: help;
+  font-size: inherit;
+  padding: 0 0.5em;
 }
 
 /* Focus ring for accessibility */
@@ -474,7 +474,7 @@ nav.menu a:focus-visible {
   position: absolute;
   z-index: 1000;
   min-width: 200px;
-  max-width: 300px;
+  max-width: 400px;
   padding: 0.45rem 0.6rem;
   border-radius: 6px;
   background: var(--tooltip-bg);
@@ -492,6 +492,8 @@ nav.menu a:focus-visible {
   bottom: calc(100% + 8px);
 }
 
+
+
 /* Tooltip arrow */
 .info__tooltip::after {
   content: "";
@@ -504,18 +506,6 @@ nav.menu a:focus-visible {
   border-color: var(--tooltip-bg) transparent transparent transparent;
 }
 
-/* Placement: bottom */
-.info[data-placement="bottom"] .info__tooltip {
-  top: calc(100% + 8px);
-  bottom: auto;
-  transform: translate(-50%, 6px) scale(0.98);
-}
-.info[data-placement="bottom"] .info__tooltip::after {
-  top: -6px;
-  bottom: auto;
-  border-width: 0 6px 6px 6px;
-  border-color: transparent transparent var(--tooltip-bg) transparent;
-}
 
 /* Visible state toggled by JS with [data-open="true"] */
 .info[data-open="true"] .info__tooltip {
@@ -578,9 +568,14 @@ nav.menu a:focus-visible {
   color: rgba(3, 8, 21, 0.75);
 }
 
+
 /* Optional: edge-to-edge, smaller cards */
 .image-card--small { max-width: 480px; }
 .image-card--wide  { max-width: 960px; }
+
+html {
+  scroll-behavior: smooth;
+}
 
 @media (max-width: 900px) {
   main {
