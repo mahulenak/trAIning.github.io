@@ -1,0 +1,31 @@
+/* Read More component */
+.read-more {
+  max-width: 100%;
+  margin: 1rem 0 2rem;
+}
+
+.read-more__text {
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.read-more__toggle {
+  font-family: "Funnel Display", sans-serif;
+  appearance: none;
+  border: 1px solid var(--brand-dark);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--brand-dark);
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.read-more__toggle:hover {
+  background: var(--brand-white);
+}
+
+.read-more__toggle:focus-visible {
+  outline: 2px solid var(--brand-dark);
+  outline-offset: 2px;
+}
