@@ -7,6 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Import fonts via Google API -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/rating.css">
+  <link rel="stylesheet" href="css/images.css">
+  <link rel="stylesheet" href="css/readmore.css">
+  <link rel="stylesheet" href="css/findbar.css">
+  <link rel="stylesheet" href="css/collapsible.css">
+  <link rel="stylesheet" href="css/infobubble.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -14,10 +20,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
 
   <!-- Import JavaScript files -->
-  <script src="search.js" defer></script>
-  <script src="collapsible.js" defer></script>
-  <script src="read-more.js" defer></script>
-  <script src="info-bubble.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <script src="js/collapsible.js" defer></script>
+  <script src="js/read-more.js" defer></script>
+  <script src="js/info-bubble.js" defer></script>
+  <script src="js/rating.js" defer></script>
 </head>
 
 <body>
@@ -47,9 +54,9 @@
     <nav class="menu">
       <ul>
         <li><a href="#introduction">♟ Úvod</a></li>
-        <li><a href="#basics">🧩 Jak LLMs fungují</a></li>
+        <li><a href="#basics">🧩 Jak jazykové modely fungují</a></li>
         <li><a href="#prosandcons">📊 Výhody a omezení</a></li>
-        <li><a href="#usage">💻 Využití LLM</a></li>
+        <li><a href="#usage">💻 Jak jazykové modely využít</a></li>
         <li><a href="#safety">🦺 Bezpečnost a etika</a></li>
         <li><a href="#prompting">✒️ Jak na kvalitní prompt</a></li>
         <li><a href="#models">📓 Přehled vybraných modelů</a></li>
@@ -74,6 +81,26 @@
               náhradu lidského úsudku, správně používané nástroje mohou zvýšit efektivitu, podpořit inovace a zjednodušit každodenní agendu ve 
               výzkumném i administrativním prostředí.
             </p>
+
+            <figure class="image-card">
+              <div class="image-card__media">
+                <img
+                    src="img/venn_diagram.png"
+                    alt="Vennův diagram znázorňující překryv mezi umělou inteligencí, strojovým učením a generativními modely."
+                    loading="lazy"
+                    decoding="async"
+                />
+              </div>
+                <figcaption class="image-card__caption">
+                <h3 class="image-card__title">Vennův diagram znázorňující překryv mezi umělou inteligencí, strojovým učením a generativními modely.</h3>
+                <!-- Optional extra line -->
+                <p class="image-card__meta">Pojem umělá inteligence zdaleka neoznačuje pouze strojové učení nebo generativní modely. Ačkoli se v běžném slovníku 
+                  zaběhlo používání termínu AI jako synonyma pro velké jazykové modely, je třeba tyto dva pojmy rozlišovat. Příkladem jednoduché umělé inteligence
+                  může být i systém pro filtrování e-mailů, který nevyužívá strojové učení. Strojové učení
+                  pak představuje podmnožinu AI, kde se systém učí z dat, a generativní modely (velké jazykové nebo obrazové) jsou další specializací v rámci strojového učení.
+                </p>
+                </figcaption>
+            </figure>
 
             <h1> Co si z toho odnést</h1>
             <p>
@@ -139,6 +166,41 @@
               Zásadní průlom přinesla architektura <b>transformer</b>, která umožňuje modelu soustředit pozornost (attention) na různé části textu najednou. 
               To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
             </p>
+
+
+            <figure class="image-card">
+              <div class="image-card__frame">
+                <img
+                    src="img/neuron_network.png"
+                    alt="Schéma neuronové sítě."
+                    loading="lazy"
+                    decoding="async"
+                />
+              </div>
+
+                <figcaption class="image-card__caption">
+                <h3 class="image-card__title">Schematické znázornění neuronové sítě.</h3>
+                <!-- Optional extra line -->
+                <p class="image-card__meta">Neuronové sítě jsou složeny z vrstev (h<sub>i</sub>) „neuronů“ (uzlů). Jednotlivé uzly jsou propojeny váhami (w<sub>ij</sub>),
+                  které reprezentují sílu spojení mezi neurony. Vstupní data (x<sub>i</sub>) procházejí sítí vrstvu po vrstvě,
+                  přičemž každý neuron aplikuje na své vstupy váhy a nelineární
+
+                  <span class="info" data-info>
+                    <span class="info__trigger info__word"
+                          tabindex="0"
+                          role="button"
+                          aria-label="Více informací o aktivační funkci">
+                      aktivační funkci
+                    </span>
+                    <span class="info__tooltip" role="tooltip" hidden>
+                      Aktivační funkce zavádí nelinearitu do modelu, což umožňuje síti zachytit složitější vzory v datech. Mezi běžné aktivační funkce patří ReLU (Rectified Linear Unit), sigmoidní funkce a tanh.
+                    </span>
+                  </span>, aby vytvořil výstup.
+                  Během tréninku se váhy těchto spojení mezi neurony upravují tak, aby síť dokázala co nejlépe predikovat požadovaný výstup.
+                </p>
+                </figcaption>
+                
+            </figure>
 
 
             <h1>Jak se LLMs učí</h1>
@@ -209,22 +271,126 @@
       </div>
       </section>
 
+      <!-- PROS AND CONS -->
+
       <section id="prosandcons">
         <div class="section section--white">
           <h1 class="section__title">Výhody a omezení</h1>
           <div class="section__body">
+            <p>
+              Generativní umělá inteligence je silný nástroj, ale není neutrální ani neomylná. Její výstupy je vždy potřeba chápat jako <b>pravděpodobnostní odhady</b> založené na vzorech v tréninkových datech, 
+              nikoli jako ověřená fakta. Ve výzkumném prostředí je proto zásadní znát základní limity těchto modelů a umět s nimi pracovat kriticky.
+            </p>
+
+            <h1>Zkreslení (bias) vyplývající z tréninkových dat</h1>
+
+            <p>
+              Jazykové modely se učí z velkých textových korpusů, které odrážejí svět takový, jaký je — včetně jeho nerovností, stereotypů a 
+              historických zkreslení. Pokud se určitý pohled nebo skupina v datech vyskytuje častěji, model má tendenci jej reprodukovat.
+              <p>To může vést například k:</p>
+
+              <ul>
+                <li><b>Genderovým stereotypům:</b> Pokud model častěji spojuje určité profese s určitým pohlavím (např. „sestra" vs. „lékař"), může tyto stereotypy posilovat.</li>
+                <li><b>Kulturnímu zkreslení:</b> Anglicky psané korpusy dominují, což může vést k preferenci západní perspektivy a menší reprezentaci jiných kultur.</li>
+                <li><b>Historickému kontextu:</b> Data zahrnují texty z různých období, včetně zastaralých pohledů, které dnes nejsou přijatelné.</li>
+                <li><b>Nedostatečnému zastoupení menšin:</b> Menšinové skupiny mohou být v datech podreprezentované, což vede k méně přesnému nebo citlivému výstupu.</li>
+              </ul>
+
+              <p>
+                Ve výzkumném prostředí je proto důležité:
+              </p>
+              <ul>
+                <li>ověřovat výstupy modelu z důvěryhodných zdrojů,</li>
+                <li>být si vědom možných zkreslení při interpretaci výsledků,</li>
+                <li>nepoužívat model jako jediný zdroj informací v citlivých oblastech (např. při hodnocení osob, kulturních kontextů nebo etických dilemat).</li>
+              </ul>
+            </p>
+
+
+
+            <h1>Halucinace: když model zní přesvědčivě, ale mýlí se</h1>
+
           </div>
         </div>
       </section>
+
+
+      <!-- USAGE -->
 
       <section id="usage">
         <div class="section section--muted">
-          <h1 class="section__title">Využití LLM</h1>
+          <h1 class="section__title">Jak jazykové modely využít</h1>
           <div class="section__body">
+            <p>
+              Generativní umělá inteligence může výrazně zjednodušit a zefektivnit různorodé činnosti, které výzkumné organizace běžně vykonávají — 
+              od rešerší a dokumentace až po komunikaci či přípravu podkladů k projektům. Nejde o náhradu odborné práce, ale o nástroj, 
+              který dokáže ušetřit čas, zpřesnit formulace, usnadnit orientaci v rozsáhlých datech a podpořit kreativní i analytické procesy.
+            </p>
+
+            <h1>Rychlejší orientace v informacích</h1>
+            <p>Výzkum často začíná hledáním relevantních zdrojů a porozuměním tomu, co je o tématu již známo. Generativní modely mohou pomoci: </p>
+            <ul>
+              <li>shrnout dlouhé články či studie do několika klíčových bodů,</li>
+              <li>porovnat různé dokumenty nebo najít rozdíly mezi verzemi,</li>
+              <li>navrhnout strukturu rešerše nebo prezentovat možnosti dalšího studia.</li>
+            </ul>
+
+            <p>Díky tomu lze rychleji získat první představu o tématu, která se pak dá manuálně ověřit a dopracovat.</p>
+
+            <h1>Podpora při psaní odborných i administrativních textů</h1>
+            <p>LLMs umějí generovat čitelné návrhy textů, které lze následně upravit podle potřeby. Pomoci mohou například při:</p>
+
+            <ul>
+              <li>formulaci úvodů, závěrů či anotací k výstupům,</li>
+              <li>přeformulování technické pasáže do srozumitelnějšího jazyka,</li>
+              <li>tvorbě dopisů, interních sdělení, popisů pracovních postupů,</li>
+              <li>přípravě kostry projektu nebo návrhu struktury zprávy.</li>
+            </ul>
+
+            <p>Nejde o finální text, ale o první návrh, který urychlí práci a umožní soustředit se na odborný obsah.</p>
+
+            <h1>Podpora analýzy dat a technických úkolů</h1>
+            <p>Generativní AI dnes zvládá nejen text, ale i práci s tabulkami, kódem nebo vizualizacemi. To umožňuje:</p>
+
+            <ul>
+              <li>převést tabulkové hodnoty do slovního shrnutí,</li>
+              <li>vysvětlit statistické metody nebo pomoci s interpretací výsledků,</li>
+              <li>generovat ukázkové skripty (např. v Pythonu či R) pro analýzu dat,</li>
+              <li>přiřadit data kategorie nebo identifikovat opakující se vzorce.</li>
+            </ul>
+
+            <p>Zkušený analytik tak může AI použít jako pomocníka při navrhování postupů nebo rychlém prototypování řešení.</p>
+
+            <h1>Tvorba nápadů, hypotéz a scénářů</h1>
+            <p>Generativní modely umějí navrhovat alternativní úhly pohledu, hypotézy či postupy řešení. Může to být užitečné zejména v raných fázích projektu, kdy se hledají:</p>
+
+            <ul>
+              <li>různé scénáře vývoje,</li>
+              <li>možné intervenční strategie,</li>
+              <li>rizikové faktory nebo související jevy,</li>
+              <li>návrhy experimentálních designů.</li>
+            </ul>
+
+            <p>AI zde neplní roli „autora výzkumu“, ale může napomoci kreativnímu myšlení a rozšířit repertoár nápadů, které stojí za to prověřit.</p>
+
+            <h1>Zefektivnění rutinních úkolů</h1>
+            <p>Mnoho času ve výzkumné praxi zabírají administrativní činnosti. AI může pomoci například:</p>
+
+            <ul>
+              <li>převést poznámky z porady do strukturovaného zápisu,</li>
+              <li>vytvořit seznam úkolů nebo harmonogram z nestrukturovaného textu,</li>
+              <li>doplnit chybějící části dokumentace,</li>
+              <li>přepsat nahrávku do textové podoby.</li>
+            </ul>
+
+            <p>Nejde o dramatické změny, ale o soubor malých úspor, které se v součtu významně projeví.</p>
+
           </div>
         </div>
       </section>
 
+
+      <!-- Bezpečnost a etika -->
       
       <section id="safety">
         <div class="section section--white">
@@ -234,6 +400,7 @@
         </div>
       </section>
 
+      <!-- PROMPTING -->
 
       <section id="prompting">
         <div class="section section--muted">
@@ -243,6 +410,8 @@
         </div>
       </section>
 
+      <!-- MODELS -->
+
       <section id="models">
         <div class="section section--white">
           <h1 class="section__title">Přehled vybraných modelů</h1>
@@ -250,6 +419,8 @@
           </div>
         </div>
       </section>
+
+      <!-- USE CASES -->
 
 
       <section id="usecases">
@@ -259,6 +430,8 @@
           </div>
         </div>
       </section>
+
+      <!-- RESOURCES -->
 
 
       <section id="resources">
@@ -424,39 +597,6 @@
                 <div class="section__body">
 
 
-                  <p>
-                        Your order will ship within 2–3 business days
-                        <span class="info" data-info>
-                          <button
-                            class="info__trigger"
-                            type="button"
-                            aria-label="More information about shipping time"
-                            aria-expanded="false"
-                            data-icon="?"
-                          ></button>
-                          <span class="info__tooltip" role="tooltip">
-                            Shipping time excludes weekends and holidays. Actual delivery depends on the selected carrier.
-                          </span>
-                        </span>.
-                      </p>
-
-                      <p>
-                        Pro tip: use keyboard shortcuts
-                        <span class="info" data-info data-placement="bottom">
-                          <button
-                            class="info__trigger"
-                            type="button"
-                            aria-label="More information about keyboard shortcuts"
-                            aria-expanded="false"
-                            data-icon="bulb"
-                          ></button>
-                          <span class="info__tooltip" role="tooltip">
-                            Press “/” to focus search. Use “?” to see all shortcuts.
-                          </span>
-                        </span>
-                        to work faster.
-                      </p>
-
                         <!-- Size variants -->
                       <figure class="image-card image-card--small">
                         <div class="image-card__media">
@@ -466,7 +606,35 @@
                           <h3 class="image-card__title">Smaller card</h3>
                         </figcaption>
                       </figure>
+                      Brain icon:
 
+
+                      <h2>Hard problem — Difficulty 5/5</h2>
+                      <div class="difficulty-rating rating-pill" data-rating="5" role="img" aria-label="Difficulty: 5 out of 5">
+                        <span class="sr-only">Difficulty: 5 out of 5</span>
+                        <noscript>
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                        </noscript>
+                      </div>
+
+
+                        <h2>Easy problem — Difficulty 1/5</h2>
+                        <div class="difficulty-rating rating-pill" data-rating="1" data-size="28" role="img" aria-label="Difficulty: 1 out of 5">
+                          <span class="sr-only">Difficulty: 1 out of 5</span>
+                          <noscript>
+                            <img src="img/icons/brain_on.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                          </noscript>
+                        </div>
+
+                      <a href="https://www.flaticon.com/free-icons/human-body" title="human body icons">Human body icons created by Pop Vectors - Flaticon</a>
 
 
             </div>
