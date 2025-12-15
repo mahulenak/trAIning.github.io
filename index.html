@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/findbar.css">
   <link rel="stylesheet" href="css/collapsible.css">
   <link rel="stylesheet" href="css/infobubble.css">
+  <link rel="stylesheet" href="css/hotspot.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -24,6 +25,7 @@
   <script src="js/collapsible.js" defer></script>
   <script src="js/read-more.js" defer></script>
   <script src="js/info-bubble.js" defer></script>
+  <script src="js/hotspot.js" defer></script>
   <script src="js/rating.js" defer></script>
 </head>
 
@@ -78,8 +80,14 @@
               Generativní umělá inteligence představuje rychle se rozvíjející oblast, která zásadně mění způsob, jakým pracujeme s informacemi, 
               daty i kreativitou. Od tvorby textů, analýz, kódu či obrázků až po pomoc s porozuměním složitým technickým problémům — generativní 
               modely se stávají nástrojem, který může ušetřit čas, rozšířit možnosti práce a nabídnout nové způsoby myšlení. Přestože nejde o 
-              náhradu lidského úsudku, správně používané nástroje mohou zvýšit efektivitu, podpořit inovace a zjednodušit každodenní agendu ve 
+              náhradu lidského úsudku, správně používané nástroje mohou zvýšit efektivitu a zjednodušit každodenní agendu ve 
               výzkumném i administrativním prostředí.
+            </p>
+            <p>
+              Veřejně dostupné jazykové modely prochází neustálým vývojem - to, co platí dnes, může zítra být zastaralou informací.
+              To se týká nejen schopností a omezení modelů, ale i pravidel, za kterých je jednotlivý vývojáři zpřístupňují. Je tak možné,
+              že informace poskytnuté v této příručce budou v budoucnu vyžadovat aktualizaci - pokud narazíte na neaktuální informace,
+              dejte nám, prosím, vědět.
             </p>
 
             <figure class="image-card">
@@ -110,14 +118,13 @@
             </p>
 
             <p>
-              Ať už jste začátečník nebo zkušený uživatel, tento trAIning vám pomůže pochopit základy,
-              možnosti a nejlepší postupy pro práci s genAI. Prozkoumáme různé aspekty této technologie,
-              včetně jejího fungování, praktických aplikací, výhod a omezení, bezpečnostních a etických
-              úvah, technik promptování a přehledu vybraných modelů.
-            </p>
-            <p>
               Budeme rádi, pokud vám tato příručka pomůže při objevování možností, které generativní umělá inteligence
               nabízí, a těšíme se na vaši zpětnou vazbu a zkušenosti s její aplikací v praxi.
+            </p>
+
+            <p>
+              Na závěr bychom chtěli apelovat na na to, abyste generativním modelům přenechávali jen tu nudnou,
+              nezáživnou práci, a sami se nadále věnovali kreativním činnostem, které vás těší, rozvíjí a naplňují.
             </p>
             
             <p style="text-align:right;">— Mirek a Mahulena, tým trAIning</p>
@@ -163,25 +170,112 @@
               <li>kontextové informace napříč větami a odstavci.</li>
             </ul>
             <p>
-              Zásadní průlom přinesla architektura <b>transformer</b>, která umožňuje modelu soustředit pozornost (attention) na různé části textu najednou. 
+              Zásadní průlom přinesla architektura <b>transformer</b>, která umožňuje modelu vstřebat různé části textu najednou. 
               To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
             </p>
 
+            <p>
+              Mimochodem, právě slovo <i>transformer</i> stojí za písmenem "T" ve zkratce <b>GPT</b>.
+              GPT (Generative Pre-trained Transformer) označuje rodinu generativních modelů založených na architektuře 
+              transformerů. Zkratka vyjadřuje způsob jejich fungování: </p>
+              <ul>
+                <li><b>generative</b> – model vytváří nový obsah,</li>
+                <li><b>pre-trained</b> – je předtrénován na rozsáhlých datech,</li>
+                <li><b>transformer</b> – využívá mechanismus attention pro práci s kontextem.</li>
+              </ul>
+            <p>
+              Nejde tedy o jeden konkrétní model (např. ChatGPT), ale o skupinu příbuzných modelů, které se navzájem liší velikostí, 
+              schopnostmi i oblastmi použití.
+            </p>
+            <div class="collapsible" data-collapsible>
+              <button
+                class="collapsible__toggle"
+                aria-expanded="false"
+                aria-controls="collapsible-panel-1"
+                id="collapsible-button-1"
+              > <b>VÍCE:</b> Transformery a Attention
+              </button>
 
-            <figure class="image-card">
-              <div class="image-card__frame">
-                <img
-                    src="img/neuron_network.png"
-                    alt="Schéma neuronové sítě."
-                    loading="lazy"
-                    decoding="async"
-                />
+              <div
+                class="collapsible__panel"
+                id="collapsible-panel-1"
+                role="region"
+                aria-labelledby="collapsible-button-1"
+                hidden>
+
+                <p>
+                Transformery jsou typ neuronových sítí, které tvoří základ většiny současných generativních modelů, 
+                zejména jazykových modelů. Na rozdíl od starších přístupů nezpracovávají data postupně krok za krokem, 
+                ale <b>pracují s celým vstupem najednou</b>. Díky tomu dokážou efektivně zachytit širší kontext a lépe se 
+                uplatňují při práci s dlouhými texty, obrazy nebo komplexními daty.
+                </p>
+                <p>
+                Klíčovým prvkem transformerů je mechanismus attention (pozornosti). Ten umožňuje modelu určit, 
+                které části vstupu jsou v daném kontextu nejdůležitější. Například při zpracování věty si model dokáže 
+                „všimnout“, ke kterým slovům se vztahuje zájmeno, nebo které pojmy spolu významově souvisejí, 
+                i když jsou ve větě od sebe vzdálené.
+                </p>
+                <p>
+                V praxi to znamená, že model dokáže zachytit vztahy napříč celým vstupem. 
+                U textu to může být porozumění tomu, že pojem uvedený na začátku odstavce je klíčový i pro závěr textu. 
+                U obrazových dat může attention zvýraznit oblasti obrazu, které jsou důležité pro rozpoznání objektu, 
+                například tvar buňky nebo specifický strukturální detail.
+                </p>
+                <p>
+                Attention přiřazuje jednotlivým částem vstupu váhy podle jejich relevance a z těchto vážených 
+                informací vytváří vnitřní reprezentaci dat. Během trénování se model učí, kam směřovat svou pozornost, 
+                a tuto schopnost pak využívá při generování textu, shrnování dokumentů nebo predikci dalších kroků – 
+                bez nutnosti explicitně definovaných pravidel.
+                </p>
+ 
               </div>
+            </div>
 
-                <figcaption class="image-card__caption">
+
+            <!-- Int. Obr: Schema neuronové sítě -->
+            <figure class="image-card">
+              <div class="hotspot-image">
+                <img
+                  src="img/neuron_network.png"
+                  alt="Schéma neuronové sítě"
+                  loading="lazy"
+                  decoding="async"
+                />
+                
+                <!-- Hotspot -->
+                <div class="hotspot" style="left: 24%; top: 10%;">
+                  <div class="hotspot__tooltip hotspot__tooltip--below" role="tooltip" hidden>
+                    <strong>Data, ze kterých se model učí</strong><br>
+                    Číselné reprezentace textu, obrazu nebo jiných vstupů, které síť přijímá jako základ pro další zpracování.
+                  </div>
+                </div>
+                
+                <!-- Hotspot -->
+                <div class="hotspot" style="left: 47%; top: 10%;">
+                  <div class="hotspot__tooltip hotspot__tooltip--below" role="tooltip" hidden>
+                    <strong>Výpočetní vrstvy</strong><br>
+                    V této části síť krok za krokem kombinuje vstupní data pomocí uzlů a vah. Postupně se učí rozpoznávat 
+                    důležité rysy a vztahy v datech – od jednoduchých vzorců až po složitější souvislosti, které nejsou 
+                    na první pohled patrné.
+                  </div>
+                </div>
+                
+                <!-- Hotspot -->
+                <div class="hotspot" style="left: 91%; top: 80%;">
+                  <div class="hotspot__tooltip" role="tooltip" hidden>
+                    <strong>Výstup modelu</strong><br>
+                    Při trénování se výstupy průběžně porovnávají s referenčními trénovacími daty. 
+                    Na základě rozdílu mezi předpovědí a skutečnými hodnotami se upravují váhy tak, aby model postupně 
+                    dokázal samostatně predikovat správný výstup.
+                  </div>
+                </div>
+              </div>
+              
+              <figcaption class="image-card__caption">
                 <h3 class="image-card__title">Schematické znázornění neuronové sítě.</h3>
-                <!-- Optional extra line -->
-                <p class="image-card__meta">Neuronové sítě jsou složeny z vrstev (h<sub>i</sub>) „neuronů“ (uzlů). Jednotlivé uzly jsou propojeny váhami (w<sub>ij</sub>),
+                <p class="image-card__meta">
+                  
+                  Neuronové sítě jsou složeny z vrstev (h<sub>i</sub>) „neuronů“ (uzlů). Jednotlivé uzly jsou propojeny váhami (w<sub>ij</sub>),
                   které reprezentují sílu spojení mezi neurony. Vstupní data (x<sub>i</sub>) procházejí sítí vrstvu po vrstvě,
                   přičemž každý neuron aplikuje na své vstupy váhy a nelineární
 
@@ -197,10 +291,12 @@
                     </span>
                   </span>, aby vytvořil výstup.
                   Během tréninku se váhy těchto spojení mezi neurony upravují tak, aby síť dokázala co nejlépe predikovat požadovaný výstup.
+
                 </p>
-                </figcaption>
-                
+              </figcaption>
             </figure>
+
+
 
 
             <h1>Jak se LLMs učí</h1>
@@ -427,6 +523,33 @@
         <div class="section section--muted">
           <h1 class="section__title">Kazuistika</h1>
           <div class="section__body">
+
+
+                      <h2>Hard problem — Difficulty 5/5</h2>
+                      <div class="difficulty-rating rating-pill" data-rating="5" role="img" aria-label="Difficulty: 5 out of 5">
+                        <span class="sr-only">Difficulty: 5 out of 5</span>
+                        <noscript>
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
+                        </noscript>
+                      </div>
+
+
+                        <h2>Easy problem — Difficulty 1/5</h2>
+                        <div class="difficulty-rating rating-pill" data-rating="1" data-size="28" role="img" aria-label="Difficulty: 1 out of 5">
+                          <span class="sr-only">Difficulty: 1 out of 5</span>
+                          <noscript>
+                            <img src="img/icons/brain_on.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                            <img src="img/icons/brain.png" alt="" width="28" height="28">
+                          </noscript>
+                        </div>
+
           </div>
         </div>
       </section>
@@ -537,13 +660,6 @@
        <div class="section section--emphasis">
                <h2 class="section__title">Notes</h2>
                 <div class="section__body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor bibendum feugiat. 
-                  Nullam gravida nisl sit amet est porttitor, sit amet euismod arcu hendrerit. Nunc cursus, diam eget posuere varius, 
-                  est lorem consequat massa, eu viverra ante metus vel ipsum. Praesent et turpis bibendum, dignissim metus in, pellentesque augue. 
-                  Vivamus ultricies nulla diam, at maximus tortor porta varius. Mauris porta tellus eros, ut mollis lacus aliquam sed. Curabitur fringilla, 
-                  nunc et luctus aliquet, felis ante vehicula orci, eget venenatis mauris nunc sit amet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-
                         <figure class="image-card">
                           <div class="image-card__media">
                             <img
@@ -587,6 +703,9 @@
                     </div>
                   </div>
 
+
+
+
                 </div>
               </div>
 
@@ -606,34 +725,6 @@
                           <h3 class="image-card__title">Smaller card</h3>
                         </figcaption>
                       </figure>
-                      Brain icon:
-
-
-                      <h2>Hard problem — Difficulty 5/5</h2>
-                      <div class="difficulty-rating rating-pill" data-rating="5" role="img" aria-label="Difficulty: 5 out of 5">
-                        <span class="sr-only">Difficulty: 5 out of 5</span>
-                        <noscript>
-                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
-                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
-                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
-                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
-                          <img src="img/icons/brain_on.png" alt="" width="32" height="32">
-                        </noscript>
-                      </div>
-
-
-                        <h2>Easy problem — Difficulty 1/5</h2>
-                        <div class="difficulty-rating rating-pill" data-rating="1" data-size="28" role="img" aria-label="Difficulty: 1 out of 5">
-                          <span class="sr-only">Difficulty: 1 out of 5</span>
-                          <noscript>
-                            <img src="img/icons/brain_on.png" alt="" width="28" height="28">
-                            <img src="img/icons/brain.png" alt="" width="28" height="28">
-                            <img src="img/icons/brain.png" alt="" width="28" height="28">
-                            <img src="img/icons/brain.png" alt="" width="28" height="28">
-                            <img src="img/icons/brain.png" alt="" width="28" height="28">
-                          </noscript>
-                        </div>
-
                       <a href="https://www.flaticon.com/free-icons/human-body" title="human body icons">Human body icons created by Pop Vectors - Flaticon</a>
 
 
