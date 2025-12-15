@@ -4,7 +4,6 @@
   border-radius: var(--small-border);
   background: white;
   max-width: 800px;
-  font-family: "Funnel Display", sans-serif;
 }
 
 .collapsible__toggle {
@@ -41,6 +40,11 @@
   overflow: hidden;
   padding: 0 1rem;
   border-top: 1px solid var(--brand-dark);
+  font-family: Source Serif 4, serif;
+}
+
+.collapsible__panel b{
+  color: var(--brand-dark);
 }
 
 /* Optional: smoother content appearance */
