@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/collapsible.css">
   <link rel="stylesheet" href="css/infobubble.css">
   <link rel="stylesheet" href="css/hotspot.css">
+  <link rel="stylesheet" href="css/reference.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -77,10 +78,12 @@
         <div class="section__body">
             <h1>Proč se zabývat generativním AI</h1>
             <p>
-              Generativní umělá inteligence představuje rychle se rozvíjející oblast, která zásadně mění způsob, jakým pracujeme s informacemi, 
-              daty i kreativitou. Od tvorby textů, analýz, kódu či obrázků až po pomoc s porozuměním složitým technickým problémům — generativní 
-              modely se stávají nástrojem, který může ušetřit čas, rozšířit možnosti práce a nabídnout nové způsoby myšlení. Přestože nejde o 
-              náhradu lidského úsudku, správně používané nástroje mohou zvýšit efektivitu a zjednodušit každodenní agendu ve 
+              Generativní umělá inteligence zásadně mění způsob jakým pracujeme s informacemi, 
+              daty i kreativními úlohami. Od tvorby textů, analýz, kódu či obrázků až po pomoc s porozuměním 
+              složitým technickým problémům — generativní 
+              modely se stávají nástrojem, který má potenciál ušetřit čas i rozšiřovat individuální kompetence.
+              Generativní AI modely nenahrazují lidský úsudek, správně používané nástroje však mohou zvýšit efektivitu a 
+              zjednodušit každodenní agendu ve 
               výzkumném i administrativním prostředí.
             </p>
             <p>
@@ -89,6 +92,8 @@
               že informace poskytnuté v této příručce budou v budoucnu vyžadovat aktualizaci - pokud narazíte na neaktuální informace,
               dejte nám, prosím, vědět.
             </p>
+
+            <!-- Obr. AI / ML / LLM -->
 
             <figure class="image-card">
               <div class="image-card__media">
@@ -100,7 +105,7 @@
                 />
               </div>
                 <figcaption class="image-card__caption">
-                <h3 class="image-card__title">Vennův diagram znázorňující překryv mezi umělou inteligencí, strojovým učením a generativními modely.</h3>
+                <h3 class="image-card__title">Diagram znázorňující překryv mezi umělou inteligencí, strojovým učením a generativními modely.</h3>
                 <!-- Optional extra line -->
                 <p class="image-card__meta">Pojem umělá inteligence zdaleka neoznačuje pouze strojové učení nebo generativní modely. Ačkoli se v běžném slovníku 
                   zaběhlo používání termínu AI jako synonyma pro velké jazykové modely, je třeba tyto dva pojmy rozlišovat. Příkladem jednoduché umělé inteligence
@@ -109,6 +114,8 @@
                 </p>
                 </figcaption>
             </figure>
+
+            <!--  -->
 
             <h1> Co si z toho odnést</h1>
             <p>
@@ -139,9 +146,11 @@
         <h2 class="section__title">Jak LLMs fungují</h2>
          <div class="section__body">
 
+          <!-- Intro -->
+
             <p>
-              Generativní jazykové modely (LLMs) představují jednu z nejpokročilejších a nejrychleji se vyvíjejících oblastí umělé inteligence. 
-              Abychom porozuměli tomu, co vlastně „umí“ a jak jejich výstupy vznikají, je dobré se podívat na několik základních principů: 
+              Generativní jazykové modely (LLMs) představují jednu z nejpokročilejších a nejrychleji se vyvíjejících oblastí <i>umělé inteligence</i>. 
+              Abychom porozuměli tomu, co vlastně „umí“ (nebo "neumí") a jak jejich výstupy vznikají, je dobré prozkoumat několik základních principů: 
               jak se tyto modely učí, jak reprezentují text a jakým způsobem generují odpovědi.
             </p>
 
@@ -156,23 +165,66 @@
               LLMs jsou tedy konkrétním typem generativní AI, která se specializuje na práci s přirozeným jazykem.
             </p>
 
-
-            <h1>Co je neuronová síť a proč na ní LLMs stojí</h1>
+            <h1>Co je neuronová síť</h1>
             <p>
-              Základem moderních jazykových modelů jsou <b>hluboké neuronové sítě</b> – matematické struktury inspirované fungováním neuronů v mozku, 
-              i když velmi zjednodušené. Sítím se říká „hluboké“ proto, že obsahují mnoho vrstev, z nichž každá provádí jednoduchou transformaci vstupu. 
-              Při průchodu textu sítí se tyto transformace skládají a umožňují modelu zachytit:
+              Základem současných jazykových modelů jsou <b>neuronové sítě</b> – matematické struktury inspirované fungováním neuronů v mozku, 
+              i když velmi zjednodušené. Pro implementaci velkých jazykových modelů se využívají tzv. <i>hluboké</i> neuronové sítě
+              (deep neural networks). Jsou „hluboké“ proto, že obsahují mnoho a mnoho vrstev, což jim umožňuje zachytit i velice složité vzory 
+              v datech, jako například:
             </p>
             <ul>
-              <li>statistické vzory v jazyce,</li>
               <li>gramatiku a syntaxi,</li>
               <li>semantické vztahy mezi slovy a frázemi,</li>
               <li>kontextové informace napříč větami a odstavci.</li>
             </ul>
-            <p>
-              Zásadní průlom přinesla architektura <b>transformer</b>, která umožňuje modelu vstřebat různé části textu najednou. 
-              To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
+
+            <!-- Reference -->
+
+            <div class="reference-card reference-card--muted">
+            <h3 class="reference-card__title">Více o hlubokých sítích</h3>
+            <p class="reference-card__description">
+              Pokud máte zájem dozvědět se víc o tzv. hlubokém učení (deep learning) a neuronových sítích, doporučujeme
+              tohoto průvodce od společnosti IBM.
             </p>
+            <a href="https://www.ibm.com/think/topics/deep-learning" 
+              class="reference-card__link" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              What is deep learning?
+            </a>
+          </div>
+
+          <!-- Transformer -->
+
+          <p>
+            Možná jste se dávno předtím, než velké jazykové modely přišly na scénu, setkali s chatboty - například
+            těmi, co se objevují na webových stránkách různých e-shopů a slibují rychlou odpověď na zákaznické dotazy.
+            Tyto starší nástroje také představují typ umělé inteligence, na rozdíl od velkých jazykových modelů
+            jsou však velice
+
+
+          <!-- Info chatboti -->  
+          <span class="info" data-info>
+            <span class="info__trigger info__word"
+              tabindex="0"
+              role="button"
+              aria-label="Customer service chatboti">
+              jednoduché a tematicky omezené
+            </span>
+            <span class="info__tooltip" role="tooltip" hidden>
+               V současné době jsou k dispozici velice sofistikované chatboty pro zákaznickou podporu, 
+               které využívají pokročilé jazykové modely. Na tomto místě máme na mysli starší generaci chatbotů,
+               se kterou jsme se setkávali před rozšířením LLMs.
+            </span>
+          </span>.
+            
+            V textu místo komplexních kontextuálních vazeb hledají klíčová slova,
+            aby na jejich základě vybraly předem připravené odpovědi.
+          </p>
+          <p>
+            Zásadní průlom v této oblasti přinesla architektura <b>transformer</b>, která umožňuje modelu vstřebat různé části textu najednou. 
+            To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
+          </p>
 
             <p>
               Mimochodem, právě slovo <i>transformer</i> stojí za písmenem "T" ve zkratce <b>GPT</b>.
@@ -184,9 +236,11 @@
                 <li><b>transformer</b> – využívá mechanismus attention pro práci s kontextem.</li>
               </ul>
             <p>
-              Nejde tedy o jeden konkrétní model (např. ChatGPT), ale o skupinu příbuzných modelů, které se navzájem liší velikostí, 
-              schopnostmi i oblastmi použití.
+              "GPT" tedy neoznačuje jeden konkrétní model (např. ChatGPT), ale skupinu příbuzných modelů, 
+              které se navzájem liší velikostí, schopnostmi i oblastmi použití.
             </p>
+
+            <!-- Transformery a Attention -->
             <div class="collapsible" data-collapsible>
               <button
                 class="collapsible__toggle"
@@ -297,7 +351,7 @@
             </figure>
 
 
-
+            <!-- Jak se učí -->
 
             <h1>Jak se LLMs učí</h1>
              <p>LLMs se učí z obrovských množství textů – knih, webových stránek, článků, technických dokumentací a mnoha dalších zdrojů. Během tréninku model:</p>
@@ -604,6 +658,63 @@
        <div class="section section--muted">
         <h2 class="section__title">Overview</h2>
         <div class="section__body">
+
+          <!-- Reference cards -->
+
+          <!-- Standard reference card -->
+          <div class="reference-card">
+            <h3 class="reference-card__title">The Illustrated Transformer</h3>
+            <p class="reference-card__description">
+              Vizuálně přívětivý průvodce architekturou transformerů, která stojí za moderními 
+              jazykovými modely. Obsahuje podrobné diagramy a vysvětlení mechanismu attention.
+            </p>
+            <a href="https://jalammar.github.io/illustrated-transformer/" 
+              class="reference-card__link" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              Přejít na článek
+            </a>
+          </div>
+
+          <!-- Compact variant -->
+          <div class="reference-card reference-card--compact">
+            <h3 class="reference-card__title">OpenAI Documentation</h3>
+            <p class="reference-card__description">
+              Oficiální dokumentace k API a best practices pro práci s GPT modely.
+            </p>
+            <a href="https://platform.openai.com/docs" 
+              class="reference-card__link" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              Navštívit dokumentaci
+            </a>
+          </div>
+
+          <!-- Muted variant -->
+          <div class="reference-card reference-card--muted">
+            <h3 class="reference-card__title">Attention Is All You Need</h3>
+            <p class="reference-card__description">
+              Původní výzkumná práce představující architekturu transformerů (Vaswani et al., 2017).
+            </p>
+            <a href="https://arxiv.org/abs/1706.03762" 
+              class="reference-card__link" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              Číst paper
+            </a>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
               <h1>Read more / Read less</h1>
 
               <!-- Example 1: defaults ("Read more" / "Read less") -->
