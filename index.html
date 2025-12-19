@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/infobubble.css">
   <link rel="stylesheet" href="css/hotspot.css">
   <link rel="stylesheet" href="css/reference.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/links.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -58,7 +60,7 @@
       <ul>
         <li><a href="#introduction">♟ Úvod</a></li>
         <li><a href="#basics">🧩 Jak jazykové modely fungují</a></li>
-        <li><a href="#prosandcons">📊 Výhody a omezení</a></li>
+        <li><a href="#prosandcons">📊 Základní pojmy</a></li>
         <li><a href="#usage">💻 Jak jazykové modely využít</a></li>
         <li><a href="#safety">🦺 Bezpečnost a etika</a></li>
         <li><a href="#prompting">✒️ Jak na kvalitní prompt</a></li>
@@ -149,22 +151,34 @@
           <!-- Intro -->
 
             <p>
-              Generativní jazykové modely (LLMs) představují jednu z nejpokročilejších a nejrychleji se vyvíjejících oblastí <i>umělé inteligence</i>. 
+              Velké jazykové modely (LLMs, Large Language Models) představují jednu z nejpokročilejších a nejrychleji se vyvíjejících oblastí <i>umělé inteligence</i>. 
               Abychom porozuměli tomu, co vlastně „umí“ (nebo "neumí") a jak jejich výstupy vznikají, je dobré prozkoumat několik základních principů: 
               jak se tyto modely učí, jak reprezentují text a jakým způsobem generují odpovědi.
             </p>
 
+            <p><a href="#AIIntro" class="link--large">⇣ AI, machine learning a generativní modely</a></p>
+            <p><a href="#NeuronovaSit" class="link--large">⇣ Co je neuronová síť</a></p>
+            <p><a href="#Transformery" class="link--large">⇣ Transformery a Attention</a></p>
+            <p><a href="#JakSeUci" class="link--large">⇣ Jak se LLMs učí</a></p>
+            <p><a href="#ZakladniTrenink" class="link--large">⇣ Základní jazykový trénink</a></p>
+            <p><a href="#Reinforcement" class="link--large">⇣ Reinforcement learning</a></p>
+            <p><a href="#JakChapeText" class="link--large">⇣ Jak LLM "chápe" text</a></p>
+
+            <section id="AIIntro">  </section>
             <h1>AI, machine learning a generativní modely</h1>
             <p>
               <b>Umělá inteligence (AI)</b> je zastřešující pojem pro systémy, které vykazují schopnosti podobné lidskému uvažování či rozhodování.
-              <br>
-              <b>Machine learning (ML)</b> je jedna z hlavních disciplín AI – soubor metod, kde se model učí z dat místo toho, aby byl explicitně naprogramován.
-              <br>
+              <br><br>
+              <b>Machine learning (ML)</b> neboli strojové učení představuje podmnožinu AI, kde se systémy učí z dat, aby zlepšily své výkony na základě zkušeností
+              bez explicitního programování každého kroku.
+              <br><br>
               <b>Generativní modely</b>, mezi něž patří i LLMs, jsou speciální třída ML modelů, které se neomezují pouze na predikci nebo klasifikaci, 
               ale <i>generují nový obsah:</i> text, obrázky, zvuk nebo kód.
               LLMs jsou tedy konkrétním typem generativní AI, která se specializuje na práci s přirozeným jazykem.
             </p>
 
+            <!-- Co je neuronová síť -->
+            <section id="NeuronovaSit"> </section> 
             <h1>Co je neuronová síť</h1>
             <p>
               Základem současných jazykových modelů jsou <b>neuronové sítě</b> – matematické struktury inspirované fungováním neuronů v mozku, 
@@ -186,115 +200,16 @@
               Pokud máte zájem dozvědět se víc o tzv. hlubokém učení (deep learning) a neuronových sítích, doporučujeme
               tohoto průvodce od společnosti IBM.
             </p>
-            <a href="https://www.ibm.com/think/topics/deep-learning" 
-              class="reference-card__link" 
-              target="_blank" 
-              rel="noopener noreferrer">
-              What is deep learning?
+            <a href="https://www.ibm.com/think/topics/deep-learning" class="reference-card__link" target="_blank" rel="noopener noreferrer">
+            What is deep learning?
             </a>
           </div>
 
-          <!-- Transformer -->
-
-          <p>
-            Možná jste se dávno předtím, než velké jazykové modely přišly na scénu, setkali s chatboty - například
-            těmi, co se objevují na webových stránkách různých e-shopů a slibují rychlou odpověď na zákaznické dotazy.
-            Tyto starší nástroje také představují typ umělé inteligence, na rozdíl od velkých jazykových modelů
-            jsou však velice
-
-
-          <!-- Info chatboti -->  
-          <span class="info" data-info>
-            <span class="info__trigger info__word"
-              tabindex="0"
-              role="button"
-              aria-label="Customer service chatboti">
-              jednoduché a tematicky omezené
-            </span>
-            <span class="info__tooltip" role="tooltip" hidden>
-               V současné době jsou k dispozici velice sofistikované chatboty pro zákaznickou podporu, 
-               které využívají pokročilé jazykové modely. Na tomto místě máme na mysli starší generaci chatbotů,
-               se kterou jsme se setkávali před rozšířením LLMs.
-            </span>
-          </span>.
-            
-            V textu místo komplexních kontextuálních vazeb hledají klíčová slova,
-            aby na jejich základě vybraly předem připravené odpovědi.
-          </p>
-          <p>
-            Zásadní průlom v této oblasti přinesla architektura <b>transformer</b>, která umožňuje modelu vstřebat různé části textu najednou. 
-            To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
-          </p>
-
-            <p>
-              Mimochodem, právě slovo <i>transformer</i> stojí za písmenem "T" ve zkratce <b>GPT</b>.
-              GPT (Generative Pre-trained Transformer) označuje rodinu generativních modelů založených na architektuře 
-              transformerů. Zkratka vyjadřuje způsob jejich fungování: </p>
-              <ul>
-                <li><b>generative</b> – model vytváří nový obsah,</li>
-                <li><b>pre-trained</b> – je předtrénován na rozsáhlých datech,</li>
-                <li><b>transformer</b> – využívá mechanismus attention pro práci s kontextem.</li>
-              </ul>
-            <p>
-              "GPT" tedy neoznačuje jeden konkrétní model (např. ChatGPT), ale skupinu příbuzných modelů, 
-              které se navzájem liší velikostí, schopnostmi i oblastmi použití.
-            </p>
-
-            <!-- Transformery a Attention -->
-            <div class="collapsible" data-collapsible>
-              <button
-                class="collapsible__toggle"
-                aria-expanded="false"
-                aria-controls="collapsible-panel-1"
-                id="collapsible-button-1"
-              > <b>VÍCE:</b> Transformery a Attention
-              </button>
-
-              <div
-                class="collapsible__panel"
-                id="collapsible-panel-1"
-                role="region"
-                aria-labelledby="collapsible-button-1"
-                hidden>
-
-                <p>
-                Transformery jsou typ neuronových sítí, které tvoří základ většiny současných generativních modelů, 
-                zejména jazykových modelů. Na rozdíl od starších přístupů nezpracovávají data postupně krok za krokem, 
-                ale <b>pracují s celým vstupem najednou</b>. Díky tomu dokážou efektivně zachytit širší kontext a lépe se 
-                uplatňují při práci s dlouhými texty, obrazy nebo komplexními daty.
-                </p>
-                <p>
-                Klíčovým prvkem transformerů je mechanismus attention (pozornosti). Ten umožňuje modelu určit, 
-                které části vstupu jsou v daném kontextu nejdůležitější. Například při zpracování věty si model dokáže 
-                „všimnout“, ke kterým slovům se vztahuje zájmeno, nebo které pojmy spolu významově souvisejí, 
-                i když jsou ve větě od sebe vzdálené.
-                </p>
-                <p>
-                V praxi to znamená, že model dokáže zachytit vztahy napříč celým vstupem. 
-                U textu to může být porozumění tomu, že pojem uvedený na začátku odstavce je klíčový i pro závěr textu. 
-                U obrazových dat může attention zvýraznit oblasti obrazu, které jsou důležité pro rozpoznání objektu, 
-                například tvar buňky nebo specifický strukturální detail.
-                </p>
-                <p>
-                Attention přiřazuje jednotlivým částem vstupu váhy podle jejich relevance a z těchto vážených 
-                informací vytváří vnitřní reprezentaci dat. Během trénování se model učí, kam směřovat svou pozornost, 
-                a tuto schopnost pak využívá při generování textu, shrnování dokumentů nebo predikci dalších kroků – 
-                bez nutnosti explicitně definovaných pravidel.
-                </p>
- 
-              </div>
-            </div>
-
-
-            <!-- Int. Obr: Schema neuronové sítě -->
+          <!-- Int. Obr: Schema neuronové sítě -->
             <figure class="image-card">
+              <div class="image-card__frame">
               <div class="hotspot-image">
-                <img
-                  src="img/neuron_network.png"
-                  alt="Schéma neuronové sítě"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <img src="img/neuron_network.png" alt="Schéma neuronové sítě" loading="lazy" decoding="async"/>
                 
                 <!-- Hotspot -->
                 <div class="hotspot" style="left: 24%; top: 10%;">
@@ -324,7 +239,7 @@
                   </div>
                 </div>
               </div>
-              
+              </div>
               <figcaption class="image-card__caption">
                 <h3 class="image-card__title">Schematické znázornění neuronové sítě.</h3>
                 <p class="image-card__meta">
@@ -334,10 +249,7 @@
                   přičemž každý neuron aplikuje na své vstupy váhy a nelineární
 
                   <span class="info" data-info>
-                    <span class="info__trigger info__word"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Více informací o aktivační funkci">
+                    <span class="info__trigger info__word" tabindex="0" role="button" aria-label="Více informací o aktivační funkci">
                       aktivační funkci
                     </span>
                     <span class="info__tooltip" role="tooltip" hidden>
@@ -350,18 +262,115 @@
               </figcaption>
             </figure>
 
+          <!-- Transformer -->
+
+          <p>
+            Možná jste se dávno předtím, než velké jazykové modely přišly na scénu, setkali s chatboty - například
+            těmi, co se objevují na webových stránkách různých e-shopů a slibují rychlou odpověď na zákaznické dotazy.
+            Tyto starší nástroje také představují typ umělé inteligence, na rozdíl od velkých jazykových modelů
+            jsou však velice
+
+
+          <!-- Info chatboti -->  
+          <span class="info" data-info>
+            <span class="info__trigger info__word" tabindex="0" role="button" aria-label="Customer service chatboti">
+            jednoduché a tematicky omezené
+            </span>
+            <span class="info__tooltip" role="tooltip" hidden>
+               V současné době jsou k dispozici velice sofistikované chatboty pro zákaznickou podporu, 
+               které využívají pokročilé jazykové modely. Na tomto místě máme na mysli starší generaci chatbotů,
+               se kterou jsme se setkávali před rozšířením LLMs.
+            </span>
+          </span>.
+            
+            V textu místo komplexních kontextuálních vazeb hledají klíčová slova,
+            aby na jejich základě vybraly předem připravené odpovědi.
+          </p>
+          <p>
+            Zásadní průlom v této oblasti přinesla architektura <b>transformer</b>, která umožňuje modelu vstřebat různé části textu najednou. 
+            To je důležité pro porozumění kontextu – nejen sousedním slovům, ale i vzdáleným souvislostem v textu.
+          </p>
+
+            <p>
+              Mimochodem, právě slovo <i>transformer</i> stojí za písmenem "T" ve zkratce <b>GPT</b>.
+              GPT (Generative Pre-trained Transformer) označuje rodinu generativních modelů založených na architektuře 
+              transformerů. Zkratka vyjadřuje způsob jejich fungování: </p>
+              <ul>
+                <li><b>generative</b> – model vytváří nový obsah,</li>
+                <li><b>pre-trained</b> – je předtrénován na rozsáhlých datech,</li>
+                <li><b>transformer</b> – využívá mechanismus attention pro práci s kontextem.</li>
+              </ul>
+            <p>
+              "GPT" tedy neoznačuje jeden konkrétní model (např. ChatGPT), ale skupinu příbuzných modelů, 
+              které se navzájem liší velikostí, schopnostmi i oblastmi použití. V principu se jedná o specifickou podmnožinu
+              velkých jazykových modelů (LLMs).
+            </p>
+
+            <section id="Transformery"> </section>
+            <!-- Transformery a Attention -->
+            <div class="collapsible" data-collapsible>
+              <button class="collapsible__toggle" aria-expanded="false" aria-controls="collapsible-panel-1" id="collapsible-button-1">
+              <b>VÍCE:</b> Transformery a Attention
+              </button>
+
+              <div class="collapsible__panel" id="collapsible-panel-1" role="region" aria-labelledby="collapsible-button-1" hidden>
+                <p>
+                Transformery jsou typ neuronových sítí, které tvoří základ většiny současných generativních modelů, 
+                zejména jazykových modelů. Na rozdíl od starších přístupů nezpracovávají data postupně krok za krokem, 
+                ale <b>pracují s celým vstupem najednou</b>. Díky tomu dokážou efektivně zachytit širší kontext a lépe se 
+                uplatňují při práci s dlouhými texty, obrazy nebo komplexními daty.
+                </p>
+                <p>
+                Klíčovým prvkem transformerů je mechanismus attention (pozornosti). Ten umožňuje modelu určit, 
+                které části vstupu jsou v daném kontextu nejdůležitější. Například při zpracování věty si model dokáže 
+                „všimnout“, ke kterým slovům se vztahuje zájmeno, nebo které pojmy spolu významově souvisejí, 
+                i když jsou ve větě od sebe vzdálené.
+                </p>
+                <p>
+                V praxi to znamená, že model dokáže zachytit vztahy napříč celým vstupem. 
+                U textu to může být porozumění tomu, že pojem uvedený na začátku odstavce je klíčový i pro závěr textu. 
+                U obrazových dat může attention zvýraznit oblasti obrazu, které jsou důležité pro rozpoznání objektu, 
+                například tvar buňky nebo specifický strukturální detail.
+                </p>
+                <p>
+                Attention přiřazuje jednotlivým částem vstupu váhy podle jejich relevance a z těchto vážených 
+                informací vytváří vnitřní reprezentaci dat. Během trénování se model učí, kam směřovat svou pozornost, 
+                a tuto schopnost pak využívá při generování textu, shrnování dokumentů nebo predikci dalších kroků – 
+                bez nutnosti explicitně definovaných pravidel.
+                </p>
+ 
+              </div>
+            </div>
 
             <!-- Jak se učí -->
-
+            <section id="JakSeUci"> </section>
             <h1>Jak se LLMs učí</h1>
-             <p>LLMs se učí z obrovských množství textů – knih, webových stránek, článků, technických dokumentací a mnoha dalších zdrojů. Během tréninku model:</p>
+             <p>LLMs se učí z obrovských množství textů – knih, odborných článků, encyklopedií, webových stránek, článků, 
+              technických dokumentací, veřejných diskuzí a dalších zdrojů. </p>
+
+            <p>
+              Různí poskytovatelé modelů (OpenAI, Anthropic, Google, Meta aj.) používají odlišné kombinace zdrojů a postupy 
+              jejich filtrování. Společným cílem je získat co nejširší, jazykově bohatý a relativně kvalitní vzorek textu, 
+              který umožní modelu naučit se obecné jazykové struktury i specializované styly.
+            </p>
+            <p>
+              Je velice důležité mít na pamět, že model sám o sobě:
+            </p>
+
+            <ul>
+              <li>při odpovídání nečerpá z původní databáze zdrojů,</li>
+              <li>si jednotlivé dokumenty použité pro trénování "nepamatuje",</li>
+              <li>nevyhledává informace během odpovídání, pokud není výslovně propojen s vyhledávačem.</li>
+            </ul>
+
+            <!-- První fáze -->
+            <section id="ZakladniTrenink"> </section>
+            <h2><b>První fáze:</b> Základní jazykový trénink</h2>
+            Na začátku je model <b>předtrénován</b> na rozsáhlém korpusu textů. Během tohoto tréninku model:</p>
               <ol>
                 <li>Dostane text rozdělený na malé jednotky -
                   <span class="info" data-info>
-                    <span class="info__trigger info__word"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Více informací o tokenech">
+                    <span class="info__trigger info__word" tabindex="0" role="button" aria-label="Více informací o tokenech">
                       tokeny
                     </span>
                     <span class="info__tooltip" role="tooltip" hidden>
@@ -369,8 +378,6 @@
                           často rozděleno na inter + national, zatímco běžná slova jako „cat“ bývají jeden token.
                     </span>
                   </span>.
-                  
-
                 </li>
                 <li>Na základě těchto tokenů se učí předpovídat následující token v sekvenci.</li>
                 <li>Postupnou optimalizací milionů až miliard parametrů si vytváří interní reprezentaci jazykových vzorů.</li>
@@ -380,8 +387,71 @@
             Důležité je, že model se <b>neučí</b> fakta v běžném slova smyslu – neukládá si je jako položky v databázi. Místo toho se učí statistické závislosti: 
             jaká slova a věty obvykle následují po jiných. Díky tomu dokáže generovat text, který působí informovaně a konzistentně.
             </p>
+            <p>
+              Výsledkem této první fáze je model, která zná jazyk, ovšem <b>neví, jak komunikovat s člověkem.</b>
+            </p>
 
-            <h1>Jak LLm "chápe" text</h1>
+            <!-- Druhá fáze -->
+            <section id="Finetuning"> </section> 
+            <h2><b>Druhá fáze:</b> Doladění a interakce</h2>
+            <p>
+            Aby byl model prakticky použitelný, je potřeba ho naučit, jak odpovídat na otázky a plnit instrukce. 
+            K tomu slouží tzv. fine-tuning, často založený na ručně připravených datech. Typicky se používají:
+            </p>
+
+            <ul>
+              <li>vzorové otázky a odpovědi,</li>
+              <li>předepsané dialogy,</li>
+              <li>instrukce typu "shrň", "vysvětli", "porovnej", "navrhni".</li>
+            </ul>
+
+            <p>Model se tak učí nejen co říkat, ale i <i>jakým způsobem</i>. Tato fáze je klíčová pro to, aby
+            LLMs působili jako asistenti reagující na zadání, a ne jako náhodné generátory textu.</p>
+
+            <!-- Třetí fáze -->
+            <section id="Reinforcement"> </section> 
+            <h2>Reinforcement learning</h2>
+            <p>
+            Některé modely procházejí ještě další fází zvanou <b>reinforcement learning from human feedback (RLHF)</b>,
+            neboli učení z lidské zpětné vazby. Tato fáze probíhá zhruba takto:
+            </p>
+
+            <ol>
+              <li>Model vygeneruje více možných odpovědí na danou otázku nebo úkol.</li>
+              <li>Lidé (hodnotitelé) tyto odpovědi porovnají a označí ty, které jsou užitečnější, přesnější,
+                srozumitelnější a stylisticky vhodnější.
+              </li>
+              <li>Model se učí preferovat lépe hodnocené odpovědi.</li>
+            </ol>
+
+            <p>
+              Tímto způsobem se model učí, které odpovědi jsou pro lidského uživatele nejpřínosnější, 
+              a zlepšuje svou schopnost generovat relevantní a kvalitní výstupy.
+            </p>
+
+            <!-- Umění dialogu -->
+            <h2>Umění dialogu</h2>
+            <p>
+              Na základě <b>vzorových konverzací</b> se model učí vést plynulý dialog. V těchto konverzacích je jasně
+              vyznačeno, kdo je <i>uživatel</i> a kdo <i>asistent</i>. Model se učí upřesňovat odpovědi, reagovat na doplňující
+              otázky a navazovat na předchozí kontext.
+            </p>
+
+            <h2>Co se model neučí</h2>
+            <p>
+              Jazykové modely dokáží působit velice přesvědčivě a informovaně. Je ovšem důležité uvědomit si, že se modely:
+            </p>
+            <ul>
+              <li>neučí logiku ve smyslu formálních pravidel nebo deduktivního uvažování,</li>
+              <li>neučí metodologii výzkumu,</li>
+              <li>neučí se fakta jako položky v databázi,</li>
+              <li>neučí se ověřovat fakta,</li>
+              <li>neučí se rozlišovat pravdu a nepravdu jako takovou.</li>
+            </ul>
+
+            <!-- Jak chápe text -->
+            <section id="JakChapeText"> </section>
+            <h1>Jak LLM "chápe" text</h1>
             <p>Aby mohl model pracovat s textem, potřebuje převést slova do matematické formy. Každý token se proto transformuje do <b>vektorové reprezentace</b> – číselného „otisku“, 
               který nese informaci o významu a kontextu. Tyto vektory existují v prostoru o vysoké dimenzi (např. 1 024 nebo 4 096 rozměrů). </p>
             <p>V tomto prostoru platí několik zajímavých vlastností:</p>
@@ -398,6 +468,7 @@
               Přestože to zní mechanicky, kombinace vysoké dimenzionality, velkých dat a sofistikované architektury vede ke zdánlivě „chápavému“ chování.
             </p>
 
+            <!-- Vzdálenosti slov v prostoru - Notecard-->
             <div class="section section--note">
               <h3 class="section__title section__title--note">Vzdálenosti slov v prostoru</h3>
 
@@ -421,17 +492,106 @@
       </div>
       </section>
 
-      <!-- PROS AND CONS -->
+      <!-- ZAKLADNI POJMY  -->
 
       <section id="prosandcons">
         <div class="section section--white">
-          <h1 class="section__title">Výhody a omezení</h1>
+          <h1 class="section__title">Základní pojmy</h1>
           <div class="section__body">
             <p>
               Generativní umělá inteligence je silný nástroj, ale není neutrální ani neomylná. Její výstupy je vždy potřeba chápat jako <b>pravděpodobnostní odhady</b> založené na vzorech v tréninkových datech, 
               nikoli jako ověřená fakta. Ve výzkumném prostředí je proto zásadní znát základní limity těchto modelů a umět s nimi pracovat kriticky.
             </p>
 
+            <p><a href="#Kontext" class="link--large">⇣ Kontextové okno</a></p>
+            <p><a href="#Reasoning" class="link--large">⇣ Reasoning modely</a></p>
+            <p><a href="#Bias" class="link--large">⇣ Předpojatost</a></p>
+            <p><a href="#Halucinace" class="link--large">⇣ Halucinace</a></p>
+
+            <!-- Kontextové okno -->
+            <section id="Kontext"> </section>
+            <h1>Kontext</h1>
+            <p>
+            Jedním ze základních, ale často přehlížených omezení velkých jazykových modelů je tzv. 
+            <b>kontextové okno</b>. To určuje, kolik informací je model schopen vzít v úvahu v jednom okamžiku — 
+            tedy kolik textu „vidí“, když generuje odpověď. Porozumění tomuto pojmu je zásadní pro efektivní práci s 
+            generativní AI.
+            </p>
+            <p>
+            Kontextové okno je maximální množství tokenů, které model dokáže zpracovat najednou. Zahrnuje přitom:
+            </p>
+            <ul>
+              <li>zadání (prompt),</li>
+              <li>historie konverzace,</li>
+              <li>generovaný text.</li>
+            </ul>
+            <p>
+              Jakmile je tato kapacita vyčerpána, model starší části kontextu přestává „vidět“. Neznamená to, že by je zapomněl 
+              v lidském smyslu — jednoduše už nejsou součástí aktuálního výpočtu.
+            </p>
+
+            <!-- Obrázek Kontextove okno -->
+
+            <figure class="image-card">
+              <div class="image-card__frame">
+              <div class="hotspot-image">
+                <img src="img/context.png" alt="Schéma kontextového okna" loading="lazy" decoding="async"/>
+              </div>
+              </div>
+              <figcaption class="image-card__caption">
+                <h3 class="image-card__title">Rozsah kontextového okna</h3>
+                <p class="image-card__meta">
+                  Počet tokenů, které model dokáže zpracovat najednou, je omezený. Různé typy a verze modelů mají různě velká kontextová okna.
+                  Kontextové okno zahrnuje nejen vstupní text a vygenerovaný obsah, ale i využití růzých doplňkových nástrojů a funkcí.
+                  <br>
+                  Obrázek byl převzat z dokumentace 
+                  <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows#context-awareness-in-claude-sonnet-4-5-and-haiku-4-5" class="link--subtle">
+                  Claude Docs
+                  </a>. 
+                </p>
+              </figcaption>
+            </figure>
+
+            <!-- O velikosti kontextu -->
+
+            <p>
+              Kapacitu kontextového okna je třeba mít na paměti při řešení komplexních úloh, které vyžadují
+              zpracování velkého množství informací - dlouhých dokumentů, rozsáhlých konverzací apod. Doporučujeme
+              sledovat aktuální dokumentaci k používanému modelu.
+            </p>
+            <p>
+              Že jste dorazili na hranici kontextového okna poznáte podle toho, že <b>model začne
+              ignorovat</b> dříve uvedené informace nebo pokyny, začne opakovat fráze, nebo odpovědi přestanou navazovat.
+              V takovém případě je potřeba prompt buď zkrátit, nebo úlohu rozdělit na menší části.
+            </p>
+            <p>
+              Abyste kontextové okno nezahltili zbytečnými informacemi, je vhodné pro každý úkol, úlohu nebo dotaz (či jejich sérii)
+              použít <b>nové kontextové okno</b>. 
+            </p>
+ 
+            <!-- Obr: Kolik tokenů je třeba na rekonstrukci známých děl? -->
+            <figure class="image-card">
+              <div class="image-card__frame">
+              <div class="hotspot-image">
+                <img
+                  src="img/tokeny.png" alt="Počet tokenů" loading="lazy" decoding="async" />
+              </div>
+              </div>
+              <figcaption class="image-card__caption">
+                <h3 class="image-card__title">Kolik tokenů je třeba k rekonstrukci známých děl?</h3>
+                <p class="image-card__meta">
+                Průměrné anglické slovo sestává z asi 1,3 tokenů. Obrázek ukazuje přibližný počet tokenů potřebných k rekonstrukci  
+                kompletního díla Williama Shakespeara, série "Píseň ledu a ohně" od George R.R. Martina a trilogie Pán Prstenů.
+                </p>
+              </figcaption>
+            </figure>
+            
+            <!-- Reasoning -->
+            <section id="Reasoning"> </section>
+            <h1>Reasoning modely</h1>
+
+            <!-- Bias -->
+            <section id="Bias"> </section>
             <h1>Zkreslení (bias) vyplývající z tréninkových dat</h1>
 
             <p>
@@ -457,8 +617,61 @@
             </p>
 
 
-
+            <!-- Halucinace -->
+            <section id="Halucinace"> </section> 
             <h1>Halucinace: když model zní přesvědčivě, ale mýlí se</h1>
+
+            <h2><b>Člověk míní, stroj mění</b></h2>
+
+            <!-- Trolli pravopis -->
+
+            <!-- Int. Obr: Schema neuronové sítě -->
+            <figure class="image-card">
+              <div class="image-card__frame">
+              <div class="hotspot-image">
+                <img
+                  src="img/trol.png"
+                  alt="Troluj pravopis"
+                  loading="lazy"
+                  decoding="async"
+                />
+                
+                <!-- Hotspot -->
+                <div class="hotspot" style="left: 38%; top: 10%;">
+                  <div class="hotspot__tooltip hotspot__tooltip--below" role="tooltip" hidden>
+                    Při psaní promptu došlo z neznámého důvodu k přeskočení prvních tří písmen ve slově "kontroluj".
+                  </div>
+                </div>
+                
+                <!-- Hotspot -->
+                <div class="hotspot" style="left: 32%; top: 56.5%;">
+                  <div class="hotspot__tooltip hotspot__tooltip--below" role="tooltip" hidden>
+                    ChatGPT si pokyn "troluj" vyložil chybně a asocioval tento výraz s pojmem "trolling", který označuje záměrné uvádění 
+                    v omyl nebo škodolibé žertování.
+                  </div>
+                </div>
+                
+                <!-- Hotspot -->
+                <div class="hotspot" style="left: 71.5%; top: 82%;">
+                  <div class="hotspot__tooltip" role="tooltip" hidden>
+                    Výsledek je zcela mimo kontext zadání. Místo kontroly pravopisu model vytvořil text, ve kterém jsou úmyslně
+                    zahrnuté hrubky. 
+                  </div>
+                </div>
+
+              </div>
+              </div>
+              <figcaption class="image-card__caption">
+                <h3 class="image-card__title">KONtrolujte zadání</h3>
+                <p class="image-card__meta">
+                  S mnoha překlepy nebo hrubkami v zadání si modely většinou poradí - testovací data ostatně hrubky také obsahují.
+                  Občas se ale podaří vytvořit takové zadání, které model „zmátne“ natolik, že začne generovat nesmysly.
+                </p>
+              </figcaption>
+            </figure>
+
+
+
 
           </div>
         </div>
@@ -566,6 +779,226 @@
         <div class="section section--white">
           <h1 class="section__title">Přehled vybraných modelů</h1>
           <div class="section__body">
+
+            <!-- All-purpose modely -->
+
+            <h2>Všeobecné (general purpose) modely</h2>
+            <!-- Tabulka s přehledem modelů -->
+            <div class="table-wrapper">
+              <table class="data-table data-table--striped data-table--compact">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Použití</th>
+                    <th>Výhody</th>
+                    <th>Nevýhody</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://chat.openai.com/">ChatGPT <br>(OpenAI)</a></td>
+                    <td>Brainstorming, podpora programování a kódování,
+                      základní rešerše, pochopení textu
+                    </td>
+                    <td>Kvalitní <a href="#Reasoning">↑ reasoning</a>,<br> verzatilní použití, <br>
+                      bezplatná verze není výrazně omezující</td>
+                    <td>Málo transparentní trénovací data, vychází ze severoamerického kulturního prostředí,
+                    což ovlivňuje jeho styl komunikace</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://gemini.google.com/">Gemini<br>(Google)</a></td>
+                    <td>Vhodný při práci s médii uložených na Google</td>
+                    <td>Ve verzi Pro má kontextové okno kapacitu až 2 miliony tokenů, je integrovaný
+                      v ekosystému Google,
+
+                      <!-- Multimodální info tooltip -->    
+                      <span class="info" data-info>
+                        <span class="info__trigger info__word" tabindex="0" role="button" aria-label="Co znamená multimodální">
+                          multimodální
+                        </span>
+                        <span class="info__tooltip" role="tooltip" hidden>
+                          Dokáže zpracovávat různé typy vstupů – nejen text, ale i obrázky, audio nebo video.
+                        </span>
+                      </span>
+                      
+                    </td>
+                    <td>Oproti ChatGPT je méně spolehlivý při práci s faktickými informacemi,
+                      méně vhodný jako asistent při psaní akademických textů
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://claude.ai/">Claude<br>(Anthropic)</a></td>
+                    <td>Analýzy dlouhých dokumentů, technické psaní, kódování</td>
+                    <td>Evropský vývojář, komunikační styl je věcnější</td>
+                    <td>Nemá integrovaný generátor obrázků</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://copilot.microsoft.com/">Microsoft Copilot</a></td>
+                    <td></td>
+                    <td>Integrace v ekosystému Microsoft, multimodální</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://ai.meta.com/llama/">LLaMA<br>(Meta)</a></td>
+                    <td></td>
+                    <td>Multimodální</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>Rešerše a zpracování dokumentů</h2>
+            <!-- Tabulka s přehledem modelů -->
+            <div class="table-wrapper">
+              <table class="data-table data-table--striped data-table--compact">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Použití</th>
+                    <th>Výhody</th>
+                    <th>Nevýhody</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://elicit.org/">Elicit</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href=" https://www.perplexity.ai/">Perplexity AI</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://notebooklm.google/">NotebookLM</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://scite.ai/">Scite</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://consensus.app/">Consensus</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <h2>Práce s textem</h2>
+            <!-- Tabulka s přehledem modelů -->
+            <div class="table-wrapper">
+              <table class="data-table data-table--striped data-table--compact">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Použití</th>
+                    <th>Výhody</th>
+                    <th>Nevýhody</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://quillbot.com/">QuillBot</a></td>
+                    <td>Parafrázování, změny slohového stylu textu</td>
+                    <td>Výběr z mnoha stylů přepisování textu (akademický, kreativní, formální, ...)</td>
+                    <td>V bezplatné verzi jsou k dispozici pouze 2 parafrázovací módy a počet
+                      vstupních slov je omezený
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.deepl.com/">DeepL</a></td>
+                    <td>Překlady z a do většiny evropských jazyků</td>
+                    <td>Bezplatná verze nemá výrazná omezení, při překladu bere v úvahu
+                      kontext a sloh
+                    </td>
+                    <td>Nevhodný pro exotické jazyky, pro jednoduché překlady stačí
+                      Google Translate
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <h2>Kódování, programování</h2>
+            <!-- Tabulka s přehledem modelů -->
+            <div class="table-wrapper">
+              <table class="data-table data-table--striped data-table--compact">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Použití</th>
+                    <th>Výhody</th>
+                    <th>Nevýhody</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+
           </div>
         </div>
       </section>
@@ -577,6 +1010,8 @@
         <div class="section section--muted">
           <h1 class="section__title">Kazuistika</h1>
           <div class="section__body">
+
+        
 
 
                       <h2>Hard problem — Difficulty 5/5</h2>
@@ -615,6 +1050,24 @@
         <div class="section section--light">
           <h1 class="section__title section__title--light">Doporučené zdroje</h1>
           <div class="section__body">
+
+          <!-- Reference -->
+          <div class="reference-card reference-card--compact">
+            <h3 class="reference-card__title">Strojové učení</h3>
+            <p class="reference-card__description">
+              Článek vysvětlující základy strojového učení a jeho aplikace v moderních AI modelech.
+            </p>
+            <a href="https://platform.openai.com/docs" 
+              class="reference-card__link" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              Machine learning, explained
+            </a>
+          </div>
+
+
+
+
           </div>
         </div>
       </section>
@@ -705,12 +1158,126 @@
           </div>
 
 
+        <!-- Odkazy -->
+        <!-- Základní odkaz s animovaným podtržením -->
+<p>
+  Více informací najdete v 
+  <a href="https://example.com">dokumentaci projektu</a>.
+</p>
+
+<!-- Externí odkaz s ikonou -->
+<p>
+  Přečtěte si 
+  <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+    původní studii
+  </a>.
+</p>
+
+<!-- Inline odkaz (minimální styl) -->
+<p>
+  Tato metoda je popsána v 
+  <a href="#methods" class="link--inline">sekci Metody</a>.
+</p>
+
+<!-- Jemný odkaz -->
+
+<a href="#source" class="link--subtle">Zdroj dat</a>
 
 
+<!-- Tabulka s nadpisem -->
 
+        <div class="table-wrapper">
+          <table class="data-table">
+            <caption>Přehled jazykových modelů</caption>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Vývojář</th>
+                <th>Parametry</th>
+                <th class="text-center">Dostupnost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4</td>
+                <td>OpenAI</td>
+                <td class="numeric">~1.7T</td>
+                <td class="text-center">
+                  <span class="table-badge table-badge--warning">Veřejné API</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Claude 3</td>
+                <td>Anthropic</td>
+                <td class="numeric">Neznámé</td>
+                <td class="text-center">
+                  <span class="table-badge table-badge--success">Veřejné API</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Llama 2</td>
+                <td>Meta</td>
+                <td class="numeric">70B</td>
+                <td class="text-center">
+                  <span class="table-badge table-badge--info">Open Source</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
+<!-- Tabulka kompaktní -->
 
+      <div class="table-wrapper">
+        <table class="data-table data-table--striped data-table--compact">
+          <thead>
+            <tr>
+              <th>Technika</th>
+              <th>Výhody</th>
+              <th>Nevýhody</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zero-shot prompting</td>
+              <td>Jednoduchý, rychlý</td>
+              <td class="text-center">
+                  <span class="table-badge table-badge--danger">Veřejné API</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Few-shot learning</td>
+              <td>Lepší výjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj<br>jjjjjjjjjjjjjjjjjjjjjjjjjjjjsledky</td>
+              <td>Vyžaduje příklady</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+<!-- Tabulka s více prostorem -->
+    <div class="table-wrapper">
+      <table class="data-table data-table--stack">
+        <thead>
+          <tr>
+            <th>Nástroj</th>
+            <th>Cena</th>
+            <th>Specializace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Nástroj">ChatGPT Plus</td>
+            <td data-label="Cena">$20/měsíc</td>
+            <td data-label="Specializace">Obecné blablablablbalblllllll použití</td>
+          </tr>
+          <tr>
+            <td data-label="Nástroj">GitHub Copilot</td>
+            <td data-label="Cena">$10/měsíc</td>
+            <td data-label="Specializace">Programování</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
 

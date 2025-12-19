@@ -109,6 +109,11 @@ nav.menu a:focus {
   outline: none;
 }
 
+nav a::after {
+  display: none; /* Disable animated underline in menu */
+}
+
+
 nav.menu a:active {
   background-color: var(--brand-light);
   color: var(--brand-dark);
@@ -138,6 +143,10 @@ nav.menu a:focus-visible {
   flex: 1;
   padding: 32px;
   margin: 0px 32px 24px 32px;
+}
+
+section {
+  scroll-margin-top: 90px; /* Adjust this value to match your header height */
 }
 
 /* Base content section ("sub-space") */
