@@ -2,7 +2,7 @@
 /* Outer card: allow overflow so tooltips can escape the card */
 .image-card {
   display: block;
-  max-width: 720px;
+  max-width: 100%;
   margin: 24px auto;
   background: #ffffff;
   border: 1px solid rgba(3, 8, 21, 0.12);
